@@ -1,0 +1,81 @@
+.mena {
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  border-radius: .4rem;
+  border: solid 1px black;
+  color: #ffffff;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+  background: #252525;
+  box-shadow:
+    15px 15px 30px #000000,
+    -15px -15px 30px #000000;
+}
+
+.mena:hover {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  box-shadow:
+    3px 3px 5px #000000,
+    -3px -3px 5px #000000;
+
+}
+
+.menadiv {
+  margin-top: 11px;
+  margin-bottom: 11px;
+  transition: all 0.5s;
+  position: relative;
+  transition: 0.5s;
+}
+
+.menadiv:after {
+  content: '>>';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  translate: 34px 0px;
+  right: 20px;
+  transition: 0.5s;
+}
+
+.menadiv:hover:after {
+  right: 0;
+  opacity: 1;
+}
+
+:global(.light) .mena {
+  border: solid 1px #ffffff;
+  background: #e0e0e0;
+  box-shadow:
+    15px 15px 30px #bebebe,
+    -15px -15px 30px #ffffff;
+  color: #202020;
+
+}
+
+:global(.light) .mena:hover {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  box-shadow:
+    3px 3px 5px #bebebe,
+    -3px -3px 5px #ffffff;
+}
+
+.nombre {
+  color: var(--auxi1);
+}
+
+:global(.light) .nombre {
+  color: var(--auxi2);
+}

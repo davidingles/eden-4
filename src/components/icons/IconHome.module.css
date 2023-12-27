@@ -1,0 +1,17 @@
+svg {
+	width: 22px;
+}
+
+path {
+	fill: #d9d9d9;
+}
+
+svg:hover {
+	transition-duration: .3s;
+	scale: 1.2;
+	translate: 0px -3px;
+}
+
+:global(.light) path {
+	fill: #202020;
+}

@@ -1,0 +1,104 @@
+---
+import BookItem from './BookItem.astro'
+import { books } from '../../data/books.js'
+---
+
+<div class='mb-8'>
+	<a
+		class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+		href='#expositor'
+	>
+		Expositores</a
+	>
+	<a
+		class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+		href='#bandeja'
+	>
+		Estuches</a
+	>
+</div>
+<div
+	id='expositor'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mb-6'
+>
+	{
+		books
+			.filter((book) => book.categoria === 'expositor')
+			.map((book) => {
+				return (
+					<ul class='card aspect-square rounded-lg'>
+						<BookItem
+							id={book.id}
+							title={book.title}
+							img={book.img}
+							three={book.three}
+						/>
+					</ul>
+				)
+			})
+	}
+</div>
+<div
+	id='bandeja'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto'
+>
+	{
+		books
+			.filter((book) => book.categoria === 'Bandejas')
+			.map((book) => {
+				return (
+					<ul class='card aspect-square rounded-lg'>
+						<BookItem
+							id={book.id}
+							title={book.title}
+							img={book.img}
+							three={book.three}
+						/>
+					</ul>
+				)
+			})
+	}
+</div>
+
+<style>
+	.card {
+		border: solid 1px black;
+		width: auto;
+		height: auto;
+		background: #313131;
+		box-shadow:
+			15px 15px 30px #000000,
+			-15px -15px 30px #000000;
+	}
+	.card:hover {
+		transition: all 0.3s ease-in-out;
+		transform: translateY(-5px);
+		filter: brightness(1.05);
+		box-shadow:
+			3px 3px 5px #000000,
+			-3px -15px 5px #000000;
+	}
+
+	:global(.light) .card {
+		border: solid 1px #ffffff;
+
+		background: #e0e0e0;
+		box-shadow:
+			15px 15px 30px #bebebe,
+			-15px -15px 30px #ffffff;
+	}
+	:global(.light) .card:hover {
+		transition: all 0.3s ease-in-out;
+		transform: translateY(-5px);
+		filter: brightness(1.05);
+		box-shadow:
+			3px 3px 5px #bebebe,
+			-3px -3px 5px #ffffff;
+	}
+	.opts {
+		background-color: var(--auxi2);
+	}
+	:global(.light) .opts {
+		background-color: #fff;
+	}
+</style>

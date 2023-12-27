@@ -1,0 +1,46 @@
+.btn {
+  /* border: 3px solid #666; */
+  color: #666;
+  padding: .5rem;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 11px 2px rgb(0 0 0 / 20%);
+  transition: all .3s ease;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 10%);
+}
+
+.foto {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  opacity: .1;
+}
+
+.loaded {
+  transition: all 1.5s ease;
+  opacity: 1;
+}
+
+.thumbnail {
+  width: 222px;
+  height: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all .9s ease;
+
+  translate: 5px 0px;
+  box-shadow: 2px 2px 11px 2px rgb(0 0 0 / 20%);
+}
+
+.thumbnail2 {
+  width: 222px;
+  height: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  opacity: .6;
+  scale: .9;
+  transition: all .3s ease;
+}

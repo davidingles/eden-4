@@ -1,0 +1,138 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
+---
+
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault()
+
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth',
+				})
+			})
+		})
+	})
+</script>
+<Layout title='Servicios de la Auxiliar'>
+	<div
+		id='botonera'
+		class='mb-8'
+	>
+		<a
+			class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+			href='#impresora'
+		>
+			Impresora</a
+		>
+		<a
+			class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+			href='#troqueladora'
+		>
+			Troqueladora</a
+		>
+		<a
+			class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+			href='#pegadora'
+		>
+			Pegadora</a
+		>
+		<a
+			class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+			href='#ploter'
+		>
+			Ploter</a
+		>
+	</div>
+	<!-- <video
+		autoplay
+		loop
+		muted
+		class='absolute z-0 w-full h-full object-cover'
+	>
+		<source src='/videos/videosServicios/videoImpresora.webm' />
+	</video> -->
+	<div class='bordeVerde flex flex-col justify-center items-center'>
+		<div
+			id='impresora'
+			class='vid flex flex-row items-center my-4'
+		>
+			<video
+				controls
+				autoplay
+				loop
+				muted
+				class='w-[66%] aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+			>
+				<source src='/videos/videosServicios/videoImpresora2.webm' />
+			</video>
+			<span class='block w-[55%] bordeRojo p-4'>
+				Impresión flexográfica de 3 colores...
+			</span>
+		</div>
+		<div
+			id='troqueladora'
+			class='vid flex flex-row items-center'
+		>
+			<video
+				controls
+				autoplay
+				loop
+				muted
+				class='w-[66%] aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+			>
+				<source src='/videos/videosServicios/videoTroqueladora.webm' />
+			</video>
+			<span class='block w-[55%] bordeRojo p-4'> Troqueladora plana...</span>
+		</div>
+		<div
+			id='pegadora'
+			class='vid flex flex-row items-center'
+		>
+			<video
+				controls
+				autoplay
+				loop
+				muted
+				class='w-[66%] aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+			>
+				<source src='/videos/videosServicios/videoImpresora.webm' />
+			</video>
+			<span class='block w-[55%] bordeRojo p-4'> Pegadora automática...</span>
+		</div>
+		<div
+			id='ploter'
+			class='vid flex flex-row items-center'
+		>
+			<video
+				controls
+				autoplay
+				loop
+				muted
+				class='w-[66%] aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+			>
+				<source src='/videos/videosServicios/videoImpresora.webm' />
+			</video>
+			<span class='block w-[55%] bordeRojo p-4'>
+				Ploter de corte digital...
+			</span>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.opts {
+		background-color: var(--auxi2);
+	}
+	:global(.light) .opts {
+		background-color: #fff;
+	}
+	html {
+		scroll-behavior: smooth;
+	}
+	.vid {
+		margin-bottom: 2rem;
+	}
+</style>

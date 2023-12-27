@@ -1,0 +1,99 @@
+---
+import { books } from '../data/books.js'
+import LayoutCatalogo from '../layouts/LayoutCatalogo.astro'
+import ObtenerComponenteJsx from '../components/book/ObtenerComponenteJsx.astro'
+import BtnEstrellas from '../components/botones-sliders/BtnEstrellas.astro'
+// import Troquel1g0011 from '@/components/three/Troquel1g0011'
+
+const { book } = Astro.params
+console.log(book)
+const bookData = books.find((b) => b.id === book)
+if (!bookData) {
+	return Astro.redirect('/404')
+}
+
+// ESTA FUNCION DE GetStaticPaths() ES NECESARIA PARA HACER EL BUILD
+// ========================================================================
+// export function getStaticPaths() {
+// 	return [
+// 		{ params: { book: 'B1Cerrada' } },
+// 		{ params: { book: 'BandejaAacotada' } },
+// 		{ params: { book: 'EstucheConAsas' } },
+// 		{ params: { book: 'ExpositorDM' } },
+// 		{ params: { book: 'troquel1g0011' } },
+// 	]
+// }
+
+// ESTA FUNCION NO SE SI FUNCIONA... SI NO, USA LA DE ARRIBA QUE ESTA COMENTADA
+export function getStaticPaths() {
+	return books.map((book) => ({
+		params: {
+			book: book.id,
+		},
+	}))
+}
+---
+
+<LayoutCatalogo title={bookData.id}>
+	<article class='flex flex-col overflow-y-auto w-[70%] bordeRojo p-2'>
+		<div class='bordeVerde flex flex-col p-2 m-2'>
+			<a
+				id='
+			anchor'
+				href='/catalogo'
+			>
+				<BtnEstrellas />
+			</a>
+			<div class='p-4'>
+				<p>{bookData.opinion}</p>
+				<span>{bookData.title}</span>
+			</div>
+		</div>
+
+		<main class='flex flex-row overflow-y-auto w-full p-2 bordeVerde flex-1'>
+			<div class='flex flex-col flex-1'>
+				<div
+					class='bordeRojo h-[350px] flex flex-col justify-center items-center [flex-shrink:1]'
+				>
+					<img
+						class='object-cover overflow-auto'
+						src={bookData.img}
+						alt=''
+					/>
+				</div>
+				<div class='bordeRojo h-[370px]'>
+					<div
+						class='flex flex-1 justify-center items-center h-[350px] overflow-auto'
+					>
+						<ObtenerComponenteJsx
+							componente_jsx={bookData.three}
+							client:visible
+						/>
+					</div>
+				</div>
+			</div>
+
+			<div class='bordeRojo flex flex-1'>
+				<video
+					class='object-scale-down h-[700px]'
+					src={bookData.video}
+					controls
+					autoplay
+					loop
+					muted
+				></video>
+			</div>
+		</main>
+	</article>
+</LayoutCatalogo>
+
+<style>
+	:global(.light) .three-fondo {
+		background-color: #fff;
+	}
+	:global(.light) .click {
+		color: black;
+	}
+</style>
+
+<!-- src='/videos/montajes/video1G001.mp4' -->
