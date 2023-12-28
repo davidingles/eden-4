@@ -1,20 +1,18 @@
 ---
 export interface Props {
-    id: string;
-    title: string;
-    img: string;
-    three?: string;
+	id: string
+	title: string
+	img: string
+	three?: string
 }
 
-const { id, title, img } = Astro.props;
+const { id, title, img } = Astro.props
 ---
 
-<div class="">
-    <a href=`/${id}`>
-        <img
-            class="aspect-[500/500] object-contain"
-            src=`${img}`
-            alt=`${title}`
-        >
-    </a>
-</div>
+<a href=`/${id}`>
+	<img
+		class='aspect-[500/500] object-cover'
+		src=`${img}`
+		alt=`${title}`
+	/>
+</a>

@@ -2,49 +2,19 @@
 import MenuReact from '@/components/menuReact.jsx'
 import BodyAsideMenuReact from '@/components/BodyAsideMenuReact.jsx'
 import Logo from '@/components/icons/LogoAuxCompleto.astro'
-
-import BodyAsideMenu from '@/components/BodyAsideMenu.astro'
-
-const menu = [
-	{
-		title: 'Inicio',
-		icon: 'home',
-		link: '/',
-	},
-	{
-		title: 'Nosotros',
-		icon: 'us',
-		link: '/nosotros',
-	},
-	{
-		title: 'Servicios',
-		icon: 'services',
-		link: '/servicios',
-	},
-	{
-		title: 'Contacto',
-		icon: 'contact',
-		link: '/contacto',
-	},
-	{
-		title: 'Catálogo',
-		icon: 'catalogo',
-		link: '/catalogo',
-	},
-]
 ---
 
-<div class='asideMenu2 bordeRojo rounded-lg h-full flex flex-col'>
+<div class='asideMenu2 bg-[#222] rounded-lg flex flex-col'>
 	<!--  -->
 	<!--  -->
 	<!-- //!!LOGO DEL ASIDE============ -->
-	<div class='p-4 logo-animation2 flex justify-center bordeVerde m-2'>
+	<div class='p-4 flex justify-center m-2'>
 		<Logo />
 	</div>
 	<!-- //!!LOGO===================== -->
 	<!--  -->
 	<!--  -->
-	<div class='bordeVerde m-2 flex flex-col flex-1'>
+	<div class='m-2 flex flex-col flex-1'>
 		<!-- !!BOTONES DE MENU================ -->
 		<div class='p-2 flex flex-col'>
 			<MenuReact
@@ -113,9 +83,7 @@ const menu = [
 		background: #f0f0f0;
 		color: #202020;
 	}
-	.asideMenu2 {
-		background: #202020;
-	}
+
 	@keyframes logoFadeIn {
 		from {
 			opacity: 0;

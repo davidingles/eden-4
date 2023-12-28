@@ -143,11 +143,12 @@ export const books = [
 	{
 		id: 'troquel4e0066',
 		title: 'Referencia: troquel4e0066',
-		img: '/catalogo/troquel4e0066.png',
+		img: '/catalogo/Render4e0066-BIS.png',
 		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
 		author: 'Vicente Latorre',
 		three: 'Troquel4e0066',
-		video: '/videos/montajes/video4e0066.mp4'
+		video: '/videos/montajes/video4e0066.webm',
+		categoria: 'Bandejas'
 	},
 	{
 		id: 'troquel1p0391',
@@ -158,5 +159,15 @@ export const books = [
 		three: 'Troquel1p0391',
 		video: '/videos/montajes/video1P0391.webm',
 		categoria: 'Cajas'
+	},
+	{
+		id: 'arbol',
+		title: 'Referencia: arbol',
+		img: '/catalogo/RenderArbol.png',
+		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
+		author: 'Vicente Latorre',
+		three: 'DecoracionArbol',
+		video: '/videos/montajes/videoDecoracion.webm',
+		categoria: 'expositor'
 	}
 ]

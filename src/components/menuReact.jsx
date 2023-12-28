@@ -40,7 +40,7 @@ const MenuReact = () => {
   }, [])
 
   return (
-    <li className='flex flex-col bordeRojo'>
+    <li className='flex flex-col '>
       {menu && menu.map((item, index) => (
         // (currentPage === item.link && setLoaded(true))
         < a

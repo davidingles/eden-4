@@ -33,12 +33,12 @@ const { title } = Astro.props
 		/>
 		<title>{title}</title>
 	</head>
-	<body class='p-2 body dil-barra-desplazamiento'>
+	<body class='body dil-barra-desplazamiento'>
 		<!--  -->
 		<!--  -->
 		<!-- //!!!: ASIDE ================================= -->
 		<div
-			class='asideMenu bordeVerde p-2 [grid-area:aside] flex flex-col overflow-y-auto w-full'
+			class='asideMenu p-2 [grid-area:aside] flex flex-col overflow-y-auto w-full'
 		>
 			<AsideMenu />
 		</div>
@@ -46,13 +46,13 @@ const { title } = Astro.props
 		<!--  -->
 		<!--  -->
 		<!-- //!!!:BODY ================================= -->
-		<div class='mainMenu bordeVerde [grid-area:main] overflow-y-auto'>
+		<div class='mainMenu [grid-area:main] overflow-y-auto'>
 			<!-- //?: header=================================== -->
-			<div class='bordeRojo m-2 rounded-lg'>
+			<div class='m-2 rounded-lg'>
 				<HeaderMenu />
 			</div>
 			<!-- //?: header=================================== -->
-			<div class='vid bordeVerde p-2 m-2'>
+			<div class='vid p-2 m-2'>
 				<slot />
 			</div>
 		</div>
@@ -62,12 +62,12 @@ const { title } = Astro.props
 	<!--  -->
 	<!-- //!!!: FOOTER ================================= -->
 	<div
-		class='bordeVerde p-2 [grid-area:footer] h-[88px] flex flex-col justify-center items-center'
+		class='p-2 [grid-area:footer] h-[88px] flex flex-col justify-center items-center'
 	>
 		<FooterMenu />
 	</div>
 	<div
-		class='bordeRojo [grid-area:aviso] p-2 flex flex-col justify-center items-center'
+		class='[grid-area:aviso] bg-black flex flex-col justify-center items-center'
 	>
 		<Footer />
 	</div>
@@ -95,7 +95,7 @@ const { title } = Astro.props
 		}
 		html {
 			font-family: 'CircularStd', system-ui, sans-serif;
-			background-color: black;
+			background-color: #222;
 			color: white;
 			background-size: 224px;
 			scroll-behavior: smooth;
