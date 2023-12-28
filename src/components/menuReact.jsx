@@ -32,7 +32,7 @@ const menu = [
 ]
 
 const MenuReact = () => {
-  const [currentPage, setCurrentPage] = useState('/');
+  const [currentPage, setCurrentPage] = useState('');
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
