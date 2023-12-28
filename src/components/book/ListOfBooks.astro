@@ -3,6 +3,20 @@ import BookItem from './BookItem.astro'
 import { books } from '../../data/books.js'
 ---
 
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault()
+
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth',
+				})
+			})
+		})
+	})
+</script>
+
 <div class='mb-8'>
 	<a
 		class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
@@ -16,10 +30,16 @@ import { books } from '../../data/books.js'
 	>
 		Estuches</a
 	>
+	<a
+		class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+		href='#cajas'
+	>
+		Cajas</a
+	>
 </div>
 <div
 	id='expositor'
-	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mb-6'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
 >
 	{
 		books
@@ -40,11 +60,32 @@ import { books } from '../../data/books.js'
 </div>
 <div
 	id='bandeja'
-	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
 >
 	{
 		books
 			.filter((book) => book.categoria === 'Bandejas')
+			.map((book) => {
+				return (
+					<ul class='card aspect-square rounded-lg'>
+						<BookItem
+							id={book.id}
+							title={book.title}
+							img={book.img}
+							three={book.three}
+						/>
+					</ul>
+				)
+			})
+	}
+</div>
+<div
+	id='cajas'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
+>
+	{
+		books
+			.filter((book) => book.categoria === 'Cajas')
 			.map((book) => {
 				return (
 					<ul class='card aspect-square rounded-lg'>

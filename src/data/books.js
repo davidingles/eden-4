@@ -157,6 +157,6 @@ export const books = [
 		author: 'Vicente Latorre',
 		three: 'Troquel1p0391',
 		video: '/videos/montajes/video1P0391.webm',
-		categoria: 'Bandejas'
+		categoria: 'Cajas'
 	}
 ]
