@@ -7,6 +7,12 @@ const nav = '/img/nav.jpg'
 
 export function NosotrosCarruselReact() {
   const imagenes = [cielo2, nave, lunes, nav];
+  const textos = [
+    "Auxiliar Manipuladora del Cartón, S.L. fue fundada en 1995 como una empresa familiar, avalada con la experiencia de más de una década de trabajo en el sector de sus fundadores.",
+    "Debido a su seriedad y honestidad Auxiliar Manipuladora del Cartón SL, esta creciendo con paso firme al igual que la confianza y respeto de sus clientes y proveedores.",
+    "El espíritu de superación, conocimiento y capacidad de todas las personas que trabajan directa o indirectamente en la empresa, hace que ésta acepte los retos y se adapte aun mercado más competitivo y exigente.",
+    "La empresa se dedica a la fabricación de productos de papelería y embalaje, con una amplia gama de productos, que se adaptan a las necesidades de nuestros clientes.",
+  ];
   const [indiceSeleccionado, setIndiceSeleccionado] = useState(0);
   const [imagenSeleccionada, setImagenSeleccionada] = useState(imagenes[0]);
   const [loaded, setLoaded] = useState(true);
@@ -36,11 +42,12 @@ export function NosotrosCarruselReact() {
 
   return (
     <>
-      <div className='flex flex-col flex-1 items-center justify-center '>
+      <div className='flex flex-col m-auto items-center justify-center '>
 
 
-        <div className='h-[50vh] w-[60vh] flex'>
+        <div className='h-[50vh] w-[60vh] m-auto flex'>
           <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" />
+          <p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
         </div>
 
 
@@ -59,7 +66,10 @@ export function NosotrosCarruselReact() {
                 className={`w-[222px] rounded-lg estilos.thumbnail cursor-pointer ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
                 src={imagen}
                 alt="fabrica"
-                onClick={() => setImagenSeleccionada(imagen)}
+                onClick={() => {
+                  setImagenSeleccionada(imagen);
+                  setIndiceSeleccionado(index);
+                }}
               />
             </div>
           ))}
