@@ -1,80 +1,20 @@
 ---
 import MenuReact from '@/components/menuReact.jsx'
-import BodyAsideMenuReact from '@/components/BodyAsideMenuReact.jsx'
 import Logo from '@/components/icons/LogoAuxCompleto.astro'
 ---
 
 <div class='asideMenu2 bg-[#222] rounded-lg flex flex-col'>
-	<!--  -->
-	<!--  -->
 	<!-- //!!LOGO DEL ASIDE============ -->
 	<div class='p-4 flex justify-center m-2 logo-animation2'>
 		<Logo />
 	</div>
-	<!-- //!!LOGO===================== -->
-	<!--  -->
-	<!--  -->
-	<div class='m-2 flex flex-col flex-1'>
-		<!-- !!BOTONES DE MENU================ -->
-		<div class='p-2 flex flex-col'>
-			<MenuReact
-				client:load
-				transition:name='menu-react'
-				transition:persist
-			/>
-		</div>
-		<!-- !!BOTONES DE MENU================ -->
-		<!--  -->
-		<!--  -->
-		<div class='flex flex-col flex-1'>
-			<!-- <BodyAsideMenuReact
-				client:load
-				transition:name='dav'
-				transition:persist
-			/> -->
-			<video
-				autoplay
-				muted
-				loop
-			>
-				<source
-					src='/videos/montajes/videoEstuche1botella.webm'
-					type='video/webm'
-				/>
-				<source
-					src='/videos/montajes/videoEstuche1botella.mp4'
-					type='video/mp4'
-				/>
-			</video>
-			<video
-				autoplay
-				muted
-				loop
-			>
-				<source
-					src='/videos/montajes/videoCazoletas2.webm'
-					type='video/webm'
-				/>
-				<source
-					src='/videos/montajes/videoCazoletas2.mp4'
-					type='video/mp4'
-				/>
-			</video>
-			<video
-				autoplay
-				muted
-				loop
-			>
-				<source
-					src='/videos/montajes/videoDecoracion.webm'
-					type='video/webm'
-				/>
-				<source
-					src='/videos/montajes/videoDecoracion.mp4'
-					type='video/mp4'
-				/>
-			</video>
-		</div>
+	<!-- !!BOTONES DE MENU================ -->
+	<div class='m-2 flex flex-col'>
+		<MenuReact
+			client:load
+			transition:name='menu-react'
+			transition:persist
+		/>
 	</div>
 </div>
 

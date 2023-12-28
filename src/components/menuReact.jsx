@@ -48,9 +48,9 @@ const MenuReact = () => {
           className={`${estilos.mena} ${currentPage === item.link ? estilos.david : ''}`}
         >
 
-          <div className={estilos.menadiv} style={{ marginLeft: '3rem', display: 'flex' }} >{item.title}</div>
+          <div className={estilos.menadiv} style={{ marginLeft: '1rem', display: 'flex' }} >{item.title}</div>
           <div
-            style={{ display: 'flex', flex: '1', justifyContent: 'end', marginRight: '3rem' }}>
+            style={{ display: 'flex', flex: '1', justifyContent: 'end', marginRight: '1rem' }}>
             {item.icon === 'us' && <IconHome />}
             {item.icon === 'home' && <IconNosotros />}
             {item.icon === 'services' && <IconServices />}

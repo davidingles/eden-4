@@ -2,7 +2,7 @@
 .david {
   display: flex;
   flex-direction: row;
-  flex: 1;
+  width: 180px;
   align-items: center;
   border-radius: .4rem;
   border: solid 1px black;

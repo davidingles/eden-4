@@ -11,8 +11,14 @@ const { id, title, img } = Astro.props
 
 <a href=`/${id}`>
 	<img
-		class='aspect-[500/500] object-cover'
+		class='aspect-[500/500] object-cover bg-slate-400 rounded-lg pegatina'
 		src=`${img}`
 		alt=`${title}`
 	/>
 </a>
+
+<style>
+	.pegatina:hover {
+		filter: brightness(1.2);
+	}
+</style>
