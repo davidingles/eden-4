@@ -3,7 +3,7 @@ svg {
 }
 
 path {
-	fill: #d9d9d9;
+	fill: currentColor;
 }
 
 svg:hover {
@@ -13,5 +13,5 @@ svg:hover {
 }
 
 :global(.light) path {
-	fill: #202020;
+	fill: currentColor;
 }

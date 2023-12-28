@@ -42,11 +42,10 @@ const MenuReact = () => {
   return (
     <li className='flex flex-col '>
       {menu && menu.map((item, index) => (
-        // (currentPage === item.link && setLoaded(true))
         < a
           key={index}
           href={item.link}
-          className={`${estilos.mena} ${currentPage === item.link ? estilos.nombre : ''}`}
+          className={`${estilos.mena} ${currentPage === item.link ? estilos.david : ''}`}
         >
 
           <div className={estilos.menadiv} style={{ marginLeft: '3rem', display: 'flex' }} >{item.title}</div>
@@ -69,6 +68,3 @@ const MenuReact = () => {
 };
 
 export default MenuReact;
-
-
-{/* <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" /> */ }
