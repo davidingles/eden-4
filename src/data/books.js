@@ -149,4 +149,14 @@ export const books = [
 		three: 'Troquel4e0066',
 		video: '/videos/montajes/video4e0066.mp4'
 	},
+	{
+		id: 'troquel1p0391',
+		title: 'Referencia: troquel1p0391',
+		img: '/catalogo/troquel1p0391.png',
+		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
+		author: 'Vicente Latorre',
+		three: 'Troquel1p0391',
+		video: '/videos/montajes/video1P0391.webm',
+		categoria: 'Bandejas'
+	}
 ]

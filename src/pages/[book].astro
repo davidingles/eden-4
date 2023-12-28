@@ -3,7 +3,6 @@ import { books } from '../data/books.js'
 import LayoutCatalogo from '../layouts/LayoutCatalogo.astro'
 import ObtenerComponenteJsx from '../components/book/ObtenerComponenteJsx.astro'
 import BtnEstrellas from '../components/botones-sliders/BtnEstrellas.astro'
-// import Troquel1g0011 from '@/components/three/Troquel1g0011'
 
 const { book } = Astro.params
 console.log(book)
@@ -12,19 +11,6 @@ if (!bookData) {
 	return Astro.redirect('/404')
 }
 
-// ESTA FUNCION DE GetStaticPaths() ES NECESARIA PARA HACER EL BUILD
-// ========================================================================
-// export function getStaticPaths() {
-// 	return [
-// 		{ params: { book: 'B1Cerrada' } },
-// 		{ params: { book: 'BandejaAacotada' } },
-// 		{ params: { book: 'EstucheConAsas' } },
-// 		{ params: { book: 'ExpositorDM' } },
-// 		{ params: { book: 'troquel1g0011' } },
-// 	]
-// }
-
-// ESTA FUNCION NO SE SI FUNCIONA... SI NO, USA LA DE ARRIBA QUE ESTA COMENTADA
 export function getStaticPaths() {
 	return books.map((book) => ({
 		params: {
@@ -65,10 +51,7 @@ export function getStaticPaths() {
 					<div
 						class='flex flex-1 justify-center items-center h-[350px] overflow-auto'
 					>
-						<ObtenerComponenteJsx
-							componente_jsx={bookData.three}
-							client:visible
-						/>
+						<ObtenerComponenteJsx componente_jsx={bookData.three} />
 					</div>
 				</div>
 			</div>
