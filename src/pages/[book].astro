@@ -21,7 +21,9 @@ export function getStaticPaths() {
 ---
 
 <LayoutCatalogo title={bookData.id}>
-	<article class='flex flex-col overflow-y-auto w-[70%] bordeRojo p-2'>
+	<article
+		class='flex flex-col overflow-y-auto w-[70%] bordeRojo p-2 three-fondo'
+	>
 		<div class='bordeVerde flex flex-col p-2 m-2'>
 			<a
 				id='
@@ -73,6 +75,9 @@ export function getStaticPaths() {
 <style>
 	:global(.light) .three-fondo {
 		background-color: #fff;
+	}
+	.three-fondo {
+		background-color: #77a6c4;
 	}
 	:global(.light) .click {
 		color: black;

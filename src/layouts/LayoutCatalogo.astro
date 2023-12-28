@@ -1,5 +1,6 @@
 ---
 import AsideMenu from '@/components/AsideMenu.astro'
+import ToggleTheme from '@/components/ToggleTheme.astro'
 import FooterMenu from '@/components/footer/FooterMenu.astro'
 import Footer from '@/components/footer/footer-old/Footer.astro'
 import HeaderMenu from '@/components/header/HeaderMenu.astro'
@@ -38,6 +39,9 @@ const { title } = Astro.props
 	<body
 		class='body dil-barra-desplazamiento bordeVerde flex flex-col w-full overflow-y-auto justify-center items-center rounded-lg p-4'
 	>
+		<div class='toggle'>
+			<ToggleTheme />
+		</div>
 		<slot />
 	</body>
 	<!-- //BODY======================================== -->
@@ -167,5 +171,8 @@ const { title } = Astro.props
 
 	.light .dil-barra-desplazamiento::-webkit-scrollbar-track {
 		background-color: white;
+	}
+	.toggle {
+		display: none;
 	}
 </style>

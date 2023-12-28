@@ -8,7 +8,7 @@ import { Suspense } from 'react'
 export function Dav(props) {
 	const { nodes, materials } = useGLTF("/gltf/Troquel1p0391.gltf");
 	return (
-		<group {...props} dispose={null}>
+		<group {...props} dispose={null} scale={2} position={[0, 0.1, 0]}>
 			<mesh
 				castShadow
 				receiveShadow
