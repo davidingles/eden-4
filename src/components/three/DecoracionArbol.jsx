@@ -1,288 +1,57 @@
 import { ContactShadows, OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
+import { MeshStandardMaterial } from 'three';
 
 
 import React from "react";
 
+
+
+
 export function Dav(props) {
 	const { nodes, materials } = useGLTF("/gltf/arbol y ciervo.gltf");
+
+	// Crear nuevas instancias de MeshStandardMaterial
+	const standardMaterials = Object.keys(materials).reduce((acc, key) => {
+		const standardMaterial = new MeshStandardMaterial();
+		standardMaterial.copy(materials[key]);
+		acc[key] = standardMaterial;
+		return acc;
+	}, {});
+
+	// standardMaterials["back-dil"].color.set('brown');
+	standardMaterials["back-dil"].metalness = 0.5;
+	standardMaterials["back-dil"].roughness = 0.5;
+	standardMaterials["Material.002"].metalness = 0.5;
+	standardMaterials["Material.002"].roughness = 0.5;
+
 	return (
 		<group {...props} dispose={null} scale={.5} position={[0, 0, 0]}>
 			<mesh
 				castShadow
 				receiveShadow
-				geometry={nodes.Plane001.geometry}
-				material={nodes.Plane001.material}
-				position={[-0.01, 0.005, 0]}
-				scale={3.505}
+				geometry={nodes.mesh_0.geometry}
+				material={standardMaterials["back-dil"]}
 			/>
-			<group position={[0.792, 0.51, -0.017]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_1.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_1_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_1_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.844, 0.151, -0.019]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_2.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_2_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_2_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.977, 0.155, -0.016]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_3.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_3_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_3_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.873, 0.326, -0.017]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_4.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_4_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_4_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.114, 0.663, -0.015]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_5.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_5_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_5_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.291, 0.119, -0.017]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_6.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_6_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_6_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.291, 0.533, -0.017]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_7.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_7_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_7_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.291, 0.898, -0.017]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_8.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_8_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_8_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.291, 1.163, -0.017]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_9.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_9_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_9_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.24, 0.663, -0.185]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_10.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_10_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_10_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.434, 0.666, -0.119]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_11.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_11_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_11_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.424, 0.666, 0.098]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_12.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_12_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_12_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
-			<group position={[0.234, 0.666, 0.15]}>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_13.geometry}
-					material={materials["back-dil"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_13_1.geometry}
-					material={materials["Material.001"]}
-				/>
-				<mesh
-					castShadow
-					receiveShadow
-					geometry={nodes.mesh_13_2.geometry}
-					material={materials["Material.002"]}
-				/>
-			</group>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.mesh_0_1.geometry}
+				material={standardMaterials["Material.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.mesh_0_2.geometry}
+				material={standardMaterials["Material.002"]}
+			/>
 		</group>
 	);
+
 }
 
 useGLTF.preload("/gltf/arbol y ciervo.gltf");
-
 
 
 const Troquel1g0011 = ({ }) => {
@@ -306,7 +75,8 @@ const Troquel1g0011 = ({ }) => {
 				position: [0, 0.5, 1.5]
 			}} >
 			<ambientLight intensity={2} />
-			{/* <pointLight position={[10, 10, 2]} /> */}
+			<directionalLight position={[10, 10, 10]} intensity={1} />
+			<pointLight position={[10, 10, 2]} />
 			<Suspense fallback={null}>
 
 				<Dav />

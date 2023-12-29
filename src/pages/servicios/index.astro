@@ -22,101 +22,66 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 		class='mb-8'
 	>
 		<a
-			class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+			class='opts'
 			href='#impresora'
 		>
 			Impresora</a
 		>
 		<a
-			class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+			class='opts'
 			href='#troqueladora'
 		>
 			Troqueladora</a
 		>
 		<a
-			class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+			class='opts'
 			href='#pegadora'
 		>
 			Pegadora</a
 		>
 		<a
-			class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+			class='opts'
 			href='#ploter'
 		>
 			Ploter</a
 		>
 	</div>
-	<!-- <video
-		autoplay
-		loop
-		muted
-		class='absolute z-0 w-full h-full object-cover'
-	>
-		<source src='/videos/videosServicios/videoImpresora.webm' />
-	</video> -->
-	<div class='bordeVerde flex flex-col justify-center items-center'>
+
+	<div class='flex flex-col justify-center items-center'>
 		<div
 			id='impresora'
-			class='vid flex flex-row items-center my-4'
+			class='vid w-[66%] flex flex-row items-center mb-4 relative'
 		>
 			<video
-				controls
 				autoplay
 				loop
 				muted
-				class='w-[66%] aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+				class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
 			>
 				<source src='/videos/videosServicios/videoImpresora2.webm' />
 			</video>
-			<span class='block w-[55%] bordeRojo p-4'>
+			<span
+				class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
+			>
 				Impresión flexográfica de 3 colores...
 			</span>
 		</div>
 		<div
 			id='troqueladora'
-			class='vid flex flex-row items-center'
+			class='vid w-[66%] flex flex-row items-center mb-4 relative'
 		>
 			<video
-				controls
 				autoplay
 				loop
 				muted
-				class='w-[66%] aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+				class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
 			>
-				<source src='/videos/videosServicios/videoTroqueladora.webm' />
+				<source src='/videos/videosServicios/video-editado-troqueladora.webm' />
 			</video>
-			<span class='block w-[55%] bordeRojo p-4'> Troqueladora plana...</span>
-		</div>
-		<div
-			id='pegadora'
-			class='vid flex flex-row items-center'
-		>
-			<video
-				controls
-				autoplay
-				loop
-				muted
-				class='w-[66%] aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+			<span
+				class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
 			>
-				<source src='/videos/videosServicios/videoImpresora.webm' />
-			</video>
-			<span class='block w-[55%] bordeRojo p-4'> Pegadora automática...</span>
-		</div>
-		<div
-			id='ploter'
-			class='vid flex flex-row items-center'
-		>
-			<video
-				controls
-				autoplay
-				loop
-				muted
-				class='w-[66%] aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
-			>
-				<source src='/videos/videosServicios/videoImpresora.webm' />
-			</video>
-			<span class='block w-[55%] bordeRojo p-4'>
-				Ploter de corte digital...
+				Troqueladora plana...
 			</span>
 		</div>
 	</div>
@@ -124,10 +89,9 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 
 <style>
 	.opts {
-		background-color: var(--auxi2);
+		margin-left: 2rem;
 	}
 	:global(.light) .opts {
-		background-color: #fff;
 	}
 	html {
 		scroll-behavior: smooth;

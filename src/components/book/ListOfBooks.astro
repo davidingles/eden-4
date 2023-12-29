@@ -38,12 +38,12 @@ import { books } from '../../data/books.js'
 	>
 </div>
 <div
-	id='expositor'
-	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-18'
+	id='cajas'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
 >
 	{
 		books
-			.filter((book) => book.categoria === 'expositor')
+			.filter((book) => book.categoria === 'Cajas')
 			.map((book) => {
 				return (
 					<ul class='card'>
@@ -58,6 +58,7 @@ import { books } from '../../data/books.js'
 			})
 	}
 </div>
+
 <div
 	id='bandeja'
 	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
@@ -80,12 +81,12 @@ import { books } from '../../data/books.js'
 	}
 </div>
 <div
-	id='cajas'
-	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
+	id='expositor'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24 mb-12'
 >
 	{
 		books
-			.filter((book) => book.categoria === 'Cajas')
+			.filter((book) => book.categoria === 'expositor')
 			.map((book) => {
 				return (
 					<ul class='card'>
@@ -100,7 +101,6 @@ import { books } from '../../data/books.js'
 			})
 	}
 </div>
-
 <style>
 	.card {
 		width: auto;

@@ -43,21 +43,6 @@ export function ContactoCarruselReact() {
 	return (
 		<>
 			<div className='flex flex-col m-auto items-center justify-center '>
-
-
-				<div className='h-[50vh] w-[60vh] m-auto flex'>
-					<img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" />
-					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
-				</div>
-
-
-
-				<div className='flex flex-row p-4 m-auto gap-4 '>
-					<button className={`${estilos.btn}`} onClick={() => { setAutoPlay(false); previous() }}>{'<'}</button>
-					<button className={`${estilos.btn}`} onClick={() => { setAutoPlay(!autoPlay) }} > {autoPlay === true ? 'STOP' : 'PLAY'}</button>
-					<button className={`${estilos.btn} btn`} onClick={() => { setAutoPlay(false); next() }}>{'>'}</button>
-				</div >
-
 				{/* //THUMBANILS ================================== */}
 				<div className='flex flex-row gap-4'>
 					{imagenes.map((imagen, index) => (
@@ -74,6 +59,25 @@ export function ContactoCarruselReact() {
 						</div>
 					))}
 				</div>
+
+
+				<div className='flex flex-row p-4 m-auto gap-4 '>
+					<button className={`${estilos.btn}`} onClick={() => { setAutoPlay(false); previous() }}>{'<'}</button>
+					<button className={`${estilos.btn}`} onClick={() => { setAutoPlay(!autoPlay) }} > {autoPlay === true ? 'STOP' : 'PLAY'}</button>
+					<button className={`${estilos.btn} btn`} onClick={() => { setAutoPlay(false); next() }}>{'>'}</button>
+				</div >
+
+
+				<div className='h-[50vh] w-[60vh] m-auto flex'>
+					{/* <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" /> */}
+					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
+				</div>
+
+
+
+
+
+
 			</div >
 		</>
 	);
