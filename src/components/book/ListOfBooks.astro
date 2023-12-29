@@ -17,21 +17,21 @@ import { books } from '../../data/books.js'
 	})
 </script>
 
-<div class=''>
+<div class='mt-10 mb-2 flex'>
 	<a
-		class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+		class='opts p-4'
 		href='#expositor'
 	>
 		Expositores</a
 	>
 	<a
-		class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+		class='opts p-4'
 		href='#bandeja'
 	>
 		Estuches</a
 	>
 	<a
-		class='opts m-2 p-4 rounded-lg bg-[#222] border-[1px] border-black overflow-y-scroll'
+		class='opts p-4'
 		href='#cajas'
 	>
 		Cajas</a
@@ -39,14 +39,14 @@ import { books } from '../../data/books.js'
 </div>
 <div
 	id='expositor'
-	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-18'
 >
 	{
 		books
 			.filter((book) => book.categoria === 'expositor')
 			.map((book) => {
 				return (
-					<ul class='card aspect-square rounded-lg'>
+					<ul class='card'>
 						<BookItem
 							id={book.id}
 							title={book.title}
@@ -88,7 +88,7 @@ import { books } from '../../data/books.js'
 			.filter((book) => book.categoria === 'Cajas')
 			.map((book) => {
 				return (
-					<ul class='card aspect-square rounded-lg'>
+					<ul class='card'>
 						<BookItem
 							id={book.id}
 							title={book.title}
@@ -103,43 +103,48 @@ import { books } from '../../data/books.js'
 
 <style>
 	.card {
-		border: solid 1px black;
 		width: auto;
 		height: auto;
-		background: #313131;
 		box-shadow:
-			15px 15px 30px #000000,
-			-15px -15px 30px #000000;
+			8px 8px 15px #111,
+			-8px -8px 15px #111;
 	}
 	.card:hover {
 		transition: all 0.3s ease-in-out;
 		transform: translateY(-5px);
 		filter: brightness(1.05);
 		box-shadow:
-			3px 3px 5px #000000,
-			-3px -15px 5px #000000;
+			3px 3px 5px #000,
+			-3px -3px 5px #000;
 	}
 
 	:global(.light) .card {
-		border: solid 1px #ffffff;
-
-		background: #e0e0e0;
 		box-shadow:
-			15px 15px 30px #bebebe,
-			-15px -15px 30px #ffffff;
+			8px 8px 15px #bebebe,
+			-8px -8px 15px #ffffff;
 	}
 	:global(.light) .card:hover {
 		transition: all 0.3s ease-in-out;
 		transform: translateY(-5px);
 		filter: brightness(1.05);
 		box-shadow:
-			3px 3px 5px #bebebe,
+			3px 3px 5px #9d9d9d,
 			-3px -3px 5px #ffffff;
 	}
+
 	.opts {
-		background-color: var(--auxi2);
+		color: transparent;
+		font-weight: bold;
+	}
+	.opts:hover {
+		text-decoration: underline;
 	}
 	:global(.light) .opts {
-		background-color: #fff;
+		color: #555;
+	}
+	:global(.light) .opts:hover {
+		color: #000;
+		font-weight: bold;
+		text-decoration: underline;
 	}
 </style>

@@ -167,7 +167,7 @@ export const books = [
 		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
 		author: 'Vicente Latorre',
 		three: 'DecoracionArbol',
-		video: '/videos/montajes/videoDecoracion.webm',
+		video: '/videos/montajes/videoArbolito.webm',
 		categoria: 'expositor'
 	}
 ]

@@ -48,7 +48,7 @@ const { title } = Astro.props
 		<!-- //!!!:BODY ================================= -->
 		<div class='mainMenu [grid-area:main] overflow-y-auto'>
 			<!-- //?: header=================================== -->
-			<div class='m-2 rounded-lg'>
+			<div class=''>
 				<HeaderMenu />
 			</div>
 			<!-- //?: header=================================== -->
@@ -122,6 +122,10 @@ const { title } = Astro.props
 		}
 		.mainMenu {
 			height: calc(100vh - 104px);
+			background-color: #333;
+		}
+		.light .mainMenu {
+			background-color: rgb(245 245 245);
 		}
 
 		.bordeRojo {

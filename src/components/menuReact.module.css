@@ -15,18 +15,18 @@
   position: relative;
   transition: 0.5s;
   background: #252525;
-  box-shadow:
+  /* box-shadow:
     8px 8px 15px #000000,
-    -8px -8px 15px #000000;
+    -8px -8px 15px #000000; */
 }
 
 .mena:hover {
   transition: all 0.3s ease-in-out;
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
   filter: brightness(.8);
-  box-shadow:
+  /* box-shadow:
     3px 3px 5px #000000,
-    -3px -3px 5px #000000;
+    -3px -3px 5px #000000; */
 
 }
 
@@ -56,20 +56,20 @@
 :global(.light) .mena {
   border: solid 1px #ffffff;
   background: #e0e0e0;
-  box-shadow:
+  /* box-shadow:
     15px 15px 30px #bebebe,
-    -15px -15px 30px #ffffff;
-  color: #202020;
+    -15px -15px 30px #ffffff; */
+  color: #555;
 
 }
 
 :global(.light) .mena:hover {
   transition: all 0.3s ease-in-out;
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
   filter: brightness(1.1);
-  box-shadow:
+  /* box-shadow:
     3px 3px 5px #bebebe,
-    -3px -3px 5px #ffffff;
+    -3px -3px 5px #ffffff; */
 }
 
 .nombre {
@@ -83,17 +83,20 @@
 .david {
   filter: brightness(2.5);
   color: var(--auxi1);
-  box-shadow:
+  /* box-shadow:
     1px 1px 5px #000000,
-    -1px -1px 5px #000000;
-
+    -1px -1px 5px #000000; */
+  border-color: #ccc;
 }
 
 :global(.light) .david {
   filter: brightness(1.2);
-  color: var(--auxi2);
-  box-shadow:
+  /* color: var(--auxi1); */
+  /* color: rgb(222, 42, 42); */
+  color: rgb(0 0 0);
+  font-weight: bold;
+  /* box-shadow:
     3px 3px 5px #bebebe,
-    -3px -3px 5px #ffffff;
-
+    -3px -3px 5px #ffffff; */
+  border-color: #888;
 }
