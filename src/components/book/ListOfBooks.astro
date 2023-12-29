@@ -20,13 +20,7 @@ import { books } from '../../data/books.js'
 <div class='mt-10 mb-2 flex'>
 	<a
 		class='opts p-4'
-		href='#expositor'
-	>
-		Expositores</a
-	>
-	<a
-		class='opts p-4'
-		href='#bandeja'
+		href='#estuches'
 	>
 		Estuches</a
 	>
@@ -34,9 +28,37 @@ import { books } from '../../data/books.js'
 		class='opts p-4'
 		href='#cajas'
 	>
-		Cajas</a
+		Cajas y Bandejas</a
+	>
+	<a
+		class='opts p-4'
+		href='#expositores'
+	>
+		Expositores y Otros</a
 	>
 </div>
+<div
+	id='estuches'
+	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
+>
+	{
+		books
+			.filter((book) => book.categoria === 'Bandejas')
+			.map((book) => {
+				return (
+					<ul class='card aspect-square rounded-lg'>
+						<BookItem
+							id={book.id}
+							title={book.title}
+							img={book.img}
+							three={book.three}
+						/>
+					</ul>
+				)
+			})
+	}
+</div>
+
 <div
 	id='cajas'
 	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
@@ -60,28 +82,7 @@ import { books } from '../../data/books.js'
 </div>
 
 <div
-	id='bandeja'
-	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24'
->
-	{
-		books
-			.filter((book) => book.categoria === 'Bandejas')
-			.map((book) => {
-				return (
-					<ul class='card aspect-square rounded-lg'>
-						<BookItem
-							id={book.id}
-							title={book.title}
-							img={book.img}
-							three={book.three}
-						/>
-					</ul>
-				)
-			})
-	}
-</div>
-<div
-	id='expositor'
+	id='expositores'
 	class='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center m-auto mt-24 mb-12'
 >
 	{

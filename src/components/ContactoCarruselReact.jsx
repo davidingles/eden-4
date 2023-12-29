@@ -5,18 +5,42 @@ const administracion = '/img/jefes/administracion.png'
 const logistica = '/img/jefes/logistica.png'
 const ventas = '/img/jefes/ventas.png'
 
+const depDiseño2 = [
+	{
+		departamento: "diseño",
+		email: "dg@laauxiliar.es",
+		telefono: "123456789",
+		responsable: "Vicente Latorre",
+	},
+	{
+		departamento: "ventas",
+		email: "dg@laauxiliar.es",
+		telefono: "123456789",
+		responsable: "Vicente Latorre",
+	},
+	{
+		departamento: "logistica",
+		email: "dg@laauxiliar.es",
+		telefono: "123456789",
+		responsable: "Vicente Latorre",
+	},
+	{
+		departamento: "admin",
+		email: "dg@laauxiliar.es",
+		telefono: "123456789",
+		responsable: "Vicente Latorre",
+	}
+]
+
 export function ContactoCarruselReact() {
 	const imagenes = [diseño, administracion, logistica, ventas];
-	const textos = [
-		"Auxiliar Manipuladora del Cartón, S.L. fue fundada en 1995 como una empresa familiar, avalada con la experiencia de más de una década de trabajo en el sector de sus fundadores.",
-		"Debido a su seriedad y honestidad Auxiliar Manipuladora del Cartón SL, esta creciendo con paso firme al igual que la confianza y respeto de sus clientes y proveedores.",
-		"El espíritu de superación, conocimiento y capacidad de todas las personas que trabajan directa o indirectamente en la empresa, hace que ésta acepte los retos y se adapte aun mercado más competitivo y exigente.",
-		"La empresa se dedica a la fabricación de productos de papelería y embalaje, con una amplia gama de productos, que se adaptan a las necesidades de nuestros clientes.",
-	];
+
 	const [indiceSeleccionado, setIndiceSeleccionado] = useState(0);
 	const [imagenSeleccionada, setImagenSeleccionada] = useState(imagenes[0]);
 	const [loaded, setLoaded] = useState(true);
 	const [autoPlay, setAutoPlay] = useState(true);
+	let textos = 'hola'
+
 
 	useEffect(() => {
 		if (autoPlay) {
@@ -70,7 +94,7 @@ export function ContactoCarruselReact() {
 
 				<div className='h-[50vh] w-[60vh] m-auto flex'>
 					{/* <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" /> */}
-					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
+					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado] || 'Cargando...'}</p>
 				</div>
 
 
