@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Stats, OrbitControls, Environment, useGLTF, Clone, Html } from '@react-three/drei'
+import { Stats, OrbitControls, Environment, useGLTF, Clone, Html, ContactShadows } from '@react-three/drei'
 
 const Models = [
 	// { title: 'Hammer', url: './models/hammer.glb' },
@@ -39,6 +39,8 @@ export default function EstucheConAsas() {
 					<Model url={Models[Models.findIndex((m) => m.title === title)].url} />
 				</Suspense>
 				<OrbitControls autoRotate />
+				<ContactShadows resolution={1024} scale={1} position={[0, -0.13, 0]} blur={3} opacity={0.6} far={1} color='#8a6246' />
+				{/* <ContactShadows resolution={1024} scale={1} position={[0, -0.02, 0]} blur={1} opacity={0.6} far={1} color='#8a6246' /> */}
 				{/* <Stats /> */}
 			</Canvas>
 		</>
