@@ -20,10 +20,12 @@ import TroquelCaballete from '../three/TroquelCaballete'
 import Troquel4e0066 from '../three/Troquel4e0066'
 import Troquel1p0391 from '../three/Troquel1p0391'
 import DecoracionArbol from '../three/DecoracionArbol'
+import Jamonero10 from '../three/Jamonero10'
 
 const { componente_jsx } = Astro.props
 ---
 
+{componente_jsx === 'Jamonero10' ? <Jamonero10 client:visible /> : null}
 {componente_jsx === 'EstucheConAsas' ? <EstucheConAsas client:visible /> : null}
 {componente_jsx === 'BandejaAcotada' ? <BandejaAcotada client:visible /> : null}
 {componente_jsx === 'B1Cerrada' ? <B1Cerrada client:visible /> : null}
