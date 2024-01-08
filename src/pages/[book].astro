@@ -21,10 +21,8 @@ export function getStaticPaths() {
 ---
 
 <LayoutCatalogo title={bookData.id}>
-	<article
-		class='flex flex-col overflow-y-auto w-[70%] p-2 three-fondo rounded-xl'
-	>
-		<div class='flex flex-col p-2 m-2'>
+	<!-- <article class=''> -->
+	<!-- <div class='flex flex-col p-2 m-2'>
 			<a
 				id='
 			anchor'
@@ -36,16 +34,14 @@ export function getStaticPaths() {
 				<p>{bookData.opinion}</p>
 				<span>{bookData.title}</span>
 			</div>
-		</div>
+		</div> -->
 
-		<main class='flex items-center overflow-y-auto w-full p-2'>
-			<div
-				class='flex bordeRojo flex-1 flex-col cursor-pointer justify-center items-center h-[350px] overflow-auto'
-			>
-				<ObtenerComponenteJsx componente_jsx={bookData.three} />
-			</div>
+	<!-- <main class=''> -->
+	<div class='w-full h-screen bordeRojo'>
+		<ObtenerComponenteJsx componente_jsx={bookData.three} />
+	</div>
 
-			<div class='flex flex-1'>
+	<!-- <div class='flex flex-1'>
 				<video
 					class='object-scale-down h-[700px]'
 					src={bookData.video}
@@ -53,9 +49,9 @@ export function getStaticPaths() {
 					loop
 					muted
 				></video>
-			</div>
-		</main>
-	</article>
+			</div> -->
+	<!-- </main> -->
+	<!-- </article> -->
 </LayoutCatalogo>
 
 <style>
@@ -69,5 +65,3 @@ export function getStaticPaths() {
 		color: black;
 	}
 </style>
-
-<!-- src='/videos/montajes/video1G001.mp4' -->

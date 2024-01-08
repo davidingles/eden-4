@@ -8,9 +8,9 @@ const nav = '/img/nav.jpg'
 export function NosotrosCarruselReact() {
   const imagenes = [cielo2, nave, lunes, nav];
   const textos = [
-    "Auxiliar Manipuladora del Cartón, S.L. fue fundada en 1995 como una empresa familiar, avalada con la experiencia de más de una década de trabajo en el sector de sus fundadores.",
-    "Debido a su seriedad y honestidad Auxiliar Manipuladora del Cartón SL, esta creciendo con paso firme al igual que la confianza y respeto de sus clientes y proveedores.",
-    "El espíritu de superación, conocimiento y capacidad de todas las personas que trabajan directa o indirectamente en la empresa, hace que ésta acepte los retos y se adapte aun mercado más competitivo y exigente.",
+    "Empresa fundada en 1995, avalada con una gran experiencia en el sector del cartón.",
+    "Auxiliar Manipuladora del Cartón va evolucionando para cubrir las necesidades de sus clientes",
+    "Todas las personas que trabajan directa o indirectamente tienen el espíritu de aceptar los retos para adaptarse aun mercado más competitivo y exigente.",
     "La empresa se dedica a la fabricación de productos de papelería y embalaje, con una amplia gama de productos, que se adaptan a las necesidades de nuestros clientes.",
   ];
   const [indiceSeleccionado, setIndiceSeleccionado] = useState(0);

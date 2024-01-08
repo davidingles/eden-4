@@ -1,0 +1,36 @@
+---
+import { books } from '../data/books.js'
+import LayoutCatalogo from '../layouts/LayoutCatalogo.astro'
+
+const { dav } = Astro.params
+console.log(dav)
+const bookData = books.find((b) => b.three === dav)
+if (!bookData) {
+	return Astro.redirect('/404')
+}
+
+export function getStaticPaths() {
+	return books.map((dav) => ({
+		params: {
+			dav: dav.three,
+		},
+	}))
+}
+---
+
+<LayoutCatalogo title={bookData.id}>
+	<article class='three-fondo'>
+		<p>DAVID</p>
+	</article>
+</LayoutCatalogo>
+
+<style>
+	:global(.light) .three-fondo {
+		background-color: #fff;
+	}
+	.three-fondo {
+		background-color: #1e2427;
+	}
+</style>
+
+<!-- src='/videos/montajes/video1G001.mp4' -->
