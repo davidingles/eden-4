@@ -1,0 +1,20 @@
+---
+import { books } from '../../data/books.js'
+
+const { video } = Astro.params
+const bookData = books.find((b) => b.id === video)
+if (!bookData) {
+	console.log(video)
+	return Astro.redirect('/404')
+}
+
+export function getStaticPaths() {
+	return books.map((book) => ({
+		params: {
+			video: book.id,
+		},
+	}))
+}
+---
+
+<div>david</div>

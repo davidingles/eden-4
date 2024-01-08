@@ -3,6 +3,7 @@ import { books } from '../data/books.js'
 import LayoutCatalogo from '../layouts/LayoutCatalogo.astro'
 import ObtenerComponenteJsx from '../components/book/ObtenerComponenteJsx.astro'
 import BtnEstrellas from '../components/botones-sliders/BtnEstrellas.astro'
+import Troquel1p0391 from '../components/three/Troquel1p0391.jsx'
 
 const { book } = Astro.params
 console.log(book)
@@ -37,8 +38,14 @@ export function getStaticPaths() {
 		</div> -->
 
 	<!-- <main class=''> -->
-	<div class='w-full h-screen bordeRojo'>
+	<!-- <div class='w-full h-screen bordeRojo'>
 		<ObtenerComponenteJsx componente_jsx={bookData.three} />
+	</div> -->
+	<div class='w-full h-screen bordeRojo'>
+		<Troquel1p0391
+			client:load
+			david={bookData.three}
+		/>
 	</div>
 
 	<!-- <div class='flex flex-1'>

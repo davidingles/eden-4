@@ -156,9 +156,9 @@ export const books = [
 		img: '/catalogo/troquel1p0391.png',
 		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
 		author: 'Vicente Latorre',
-		three: 'Troquel1p0391',
+		three: '1p0391',
 		video: '/videos/montajes/videoCajaConBotes.webm',
-		categoria: 'Cajas'
+		categoria: 'Cajas',
 	},
 	{
 		id: 'arbol',
@@ -172,11 +172,11 @@ export const books = [
 	},
 	{
 		id: 'jamonero',
-		title: 'Referencia: jamonero',
+		title: 'Referencia: jamoneroMacondo',
 		img: '/catalogo/JamoneroSinImpresion.png',
 		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
 		author: 'Vicente Latorre',
-		three: 'Jamonero10',
+		three: 'jamoneroMacondo2',
 		video: '/videos/montajes/videoJamonero.webm',
 		categoria: 'Bandejas'
 	}

@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { Suspense, useState, useRef } from 'react'
+import { Suspense, useState, useRef, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Stats, OrbitControls, Environment, useGLTF, Clone, Html, ContactShadows } from '@react-three/drei'
 
@@ -8,7 +8,7 @@ const Models = [
 	// { title: 'Drill', url: './models/drill.glb' },
 	// { title: 'Tape Measure', url: './models/tapeMeasure.glb' },
 	// { title: 'blender', url: './models/blender.gltf' },
-	// { title: 'blender2', url: './models/blender2.glb' },
+	{ title: 'jamoneroMacondo2', url: './gltf/jamoneroMacondo2.glb' },
 	{ title: '1p0391', url: './gltf/1p0391.glb' },
 ]
 
@@ -38,21 +38,32 @@ function Fallback() {
 	return <Html><div>Loading...</div></Html>
 }
 
-export default function EstucheConAsas() {
-	const [title, setTitle] = useState('1p0391')
+export default function EstucheConAsas({ david }) {
+	console.log(david)
+	const [title, setTitle] = useState(david)
+	useEffect(() => {
+		{
+			setTitle(david)
+		}
+	}, [david])
+
+
+	const modelIndex = Models.findIndex((m) => m.title === title)
+	const modelUrl = modelIndex !== -1 ? Models[modelIndex].url : null
 
 	return (
 		<>
-			{/* <span id="info"><p style={{ fontWeight: 'bold', margin: '0', padding: '0' }}>3D interactivo.</p> <br />Haz click y gíralo </span> */}
+			<span id="info"><p style={{ fontWeight: 'bold', margin: '0', padding: '0' }}>3D interactivo.</p> <br />Haz click y gíralo </span>
+			<a href={`/animacion/${david}`}>hola</a>
 			<Canvas camera={{ position: [0, .4, -0.6], near: .01, fov: 50 }}>
 				<pointLight position={[100, 100, 0]} intensity={55555} decay={2} />
 				<pointLight position={[-100, 100, 0]} intensity={55555} decay={2} />
-				<pointLight position={[-100, 100, 100]} intensity={55555} decay={2} />
-				<pointLight position={[100, -100, -100]} intensity={55555} decay={2} />
-				<pointLight position={[100, -100, 100]} intensity={55555} decay={2} />
-				<ambientLight intensity={1} />
+				<pointLight position={[-100, 100, 100]} intensity={11111} decay={2} />
+				<pointLight position={[100, -100, -100]} intensity={11111} decay={2} />
+				<pointLight position={[100, -100, 100]} intensity={11111} decay={2} />
+				<ambientLight intensity={2} />
 				<Suspense fallback={<Fallback />}>
-					<Model url={Models[Models.findIndex((m) => m.title === title)].url} />
+					{modelUrl && <Model url={modelUrl} />}
 				</Suspense>
 				<OrbitControls autoRotate autoRotateSpeed={.2} />
 				<ContactShadows resolution={512} scale={.5} position={[0, -0.3, 0]} blur={2} opacity={0.2} far={1} color='#8a6246' />
