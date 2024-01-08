@@ -11,7 +11,7 @@ export function NosotrosCarruselReact() {
     "Empresa fundada en 1995, avalada con una gran experiencia en el sector del cartón.",
     "Auxiliar Manipuladora del Cartón va evolucionando para cubrir las necesidades de sus clientes",
     "Todas las personas que trabajan directa o indirectamente tienen el espíritu de aceptar los retos para adaptarse aun mercado más competitivo y exigente.",
-    "La empresa se dedica a la fabricación de productos de papelería y embalaje, con una amplia gama de productos, que se adaptan a las necesidades de nuestros clientes.",
+    "Tras la incorporación de nuevas generaciones seguiremos avanzando juntos.",
   ];
   const [indiceSeleccionado, setIndiceSeleccionado] = useState(0);
   const [imagenSeleccionada, setImagenSeleccionada] = useState(imagenes[0]);

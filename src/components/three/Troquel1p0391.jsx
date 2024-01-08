@@ -52,8 +52,8 @@ export default function EstucheConAsas({ david }) {
 
 	return (
 		<>
-			<span id="info"><p style={{ fontWeight: 'bold', margin: '0', padding: '0' }}>3D interactivo.</p> <br />Haz click y gíralo </span>
-			<a href={`/animacion/${david}`}>hola</a>
+
+			{/* <a href={`/animacion/${david}`}>hola</a> */}
 			<Canvas camera={{ position: [0, .4, -0.6], near: .01, fov: 50 }}>
 				<pointLight position={[100, 100, 0]} intensity={55555} decay={2} />
 				<pointLight position={[-100, 100, 0]} intensity={55555} decay={2} />

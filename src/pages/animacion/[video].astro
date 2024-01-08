@@ -1,5 +1,7 @@
 ---
+import LayoutCatalogo from '../../layouts/LayoutCatalogo.astro'
 import { books } from '../../data/books.js'
+import BtnEstrellas from '../../components/botones-sliders/BtnEstrellas.astro'
 
 const { video } = Astro.params
 console.log({ video })
@@ -17,12 +19,32 @@ export function getStaticPaths() {
 }
 ---
 
-<div class='flex flex-1'>
-	<video
-		class='object-scale-down h-[700px]'
-		src={bookData.video}
-		autoplay
-		loop
-		muted
-	></video>
-</div>
+<LayoutCatalogo title={bookData.three}>
+	<main class='w-full h-screen relative justify-center items-center'>
+		<div class='absolute top-4 lef-4 z-20 flex flex-col'>
+			<nav class='flex'>
+				<a
+					id='
+					anchor'
+					href='/catalogo'
+				>
+					<BtnEstrellas />
+				</a>
+				<div class='px-4'>
+					<p>{bookData.opinion}</p>
+					<span>{bookData.title}</span>
+				</div>
+			</nav>
+		</div>
+
+		<div class=''>
+			<video
+				class='object-scale-down h-[800px] w-full'
+				src={bookData.video}
+				autoplay
+				loop
+				muted
+			></video>
+		</div>
+	</main>
+</LayoutCatalogo>

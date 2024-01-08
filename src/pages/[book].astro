@@ -1,7 +1,6 @@
 ---
 import { books } from '../data/books.js'
 import LayoutCatalogo from '../layouts/LayoutCatalogo.astro'
-import ObtenerComponenteJsx from '../components/book/ObtenerComponenteJsx.astro'
 import BtnEstrellas from '../components/botones-sliders/BtnEstrellas.astro'
 import Troquel1p0391 from '../components/three/Troquel1p0391.jsx'
 
@@ -22,43 +21,39 @@ export function getStaticPaths() {
 ---
 
 <LayoutCatalogo title={bookData.id}>
-	<!-- <article class=''> -->
-	<!-- <div class='flex flex-col p-2 m-2'>
-			<a
-				id='
-			anchor'
-				href='/catalogo'
-			>
-				<BtnEstrellas />
-			</a>
-			<div class='p-4'>
-				<p>{bookData.opinion}</p>
-				<span>{bookData.title}</span>
-			</div>
-		</div> -->
-
-	<!-- <main class=''> -->
-	<!-- <div class='w-full h-screen bordeRojo'>
-		<ObtenerComponenteJsx componente_jsx={bookData.three} />
-	</div> -->
-	<div class='w-full h-screen bordeRojo'>
-		<Troquel1p0391
-			client:load
-			david={bookData.three}
-		/>
-	</div>
-
-	<!-- <div class='flex flex-1'>
-				<video
-					class='object-scale-down h-[700px]'
-					src={bookData.video}
-					autoplay
-					loop
-					muted
-				></video>
-			</div> -->
-	<!-- </main> -->
-	<!-- </article> -->
+	<main class='flex flex-col w-full relative'>
+		<div class='absolute top-4 lef-4 z-20 flex flex-col'>
+			<nav class='flex'>
+				<a
+					id='
+					anchor'
+					href='/catalogo'
+				>
+					<BtnEstrellas />
+				</a>
+				<div class='px-4'>
+					<p>{bookData.opinion}</p>
+					<span>{bookData.title}</span>
+				</div>
+			</nav>
+		</div>
+		<a
+			href={`/animacion/${bookData.three}`}
+			class='absolute top-1/4 p-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 inline-block text-orange-500 text-center text-sm font-bold uppercase mt-4 bg-slate-500 bg-opacity-20 rounded-full w-auto hover:transition-all hover:bg-opacity-30 hover:text-orange-400 hover:scale-105'
+			>Ver video <br />animado de montaje</a
+		>
+		<div
+			class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 bg-slate-600 text-white font-bold rounded-full bg-opacity-60 p-6 border-2 border-white border-opacity-30'
+		>
+			GÍRAME
+		</div>
+		<div class='w-full h-screen'>
+			<Troquel1p0391
+				client:load
+				david={bookData.three}
+			/>
+		</div>
+	</main>
 </LayoutCatalogo>
 
 <style>
