@@ -39,7 +39,6 @@ function Fallback() {
 }
 
 export default function EstucheConAsas({ david }) {
-	console.log(david)
 	const [title, setTitle] = useState(david)
 	useEffect(() => {
 		{

@@ -2,19 +2,27 @@
 import { books } from '../../data/books.js'
 
 const { video } = Astro.params
-const bookData = books.find((b) => b.id === video)
+console.log({ video })
+const bookData = books.find((b) => b.three === video)
 if (!bookData) {
-	console.log(video)
 	return Astro.redirect('/404')
 }
 
 export function getStaticPaths() {
 	return books.map((book) => ({
 		params: {
-			video: book.id,
+			video: book.three,
 		},
 	}))
 }
 ---
 
-<div>david</div>
+<div class='flex flex-1'>
+	<video
+		class='object-scale-down h-[700px]'
+		src={bookData.video}
+		autoplay
+		loop
+		muted
+	></video>
+</div>
