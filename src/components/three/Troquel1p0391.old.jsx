@@ -5,9 +5,11 @@ import { Stats, OrbitControls, Environment, useGLTF, Clone, Html, ContactShadows
 
 const Models = [
 	// { title: 'Hammer', url: './models/hammer.glb' },
-	// { title: 'Drill', url: './models/drill.glb' },
-	// { title: 'Tape Measure', url: './models/tapeMeasure.glb' },
-	// { title: 'blender', url: './models/blender.gltf' },
+	{ title: 'cajaSeparadorRemesh', url: './gltf/cajaSeparadorRemesh.glb' },
+	{ title: 'cajaSeparadorRemesh2', url: './gltf/cajaSeparadorRemesh2.glb' },
+	{ title: 'troquel4e0067_glb', url: './gltf/troquel4e0067_glb.glb' },
+	{ title: 'CajaSeparador', url: './gltf/CajaSeparador.glb' },
+	{ title: 'jamoneroMacondo2', url: './gltf/jamoneroMacondo2.glb' },
 	{ title: 'jamoneroMacondo2', url: './gltf/jamoneroMacondo2.glb' },
 	{ title: '1p0391', url: './gltf/1p0391.glb' },
 ]
