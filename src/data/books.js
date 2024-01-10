@@ -189,5 +189,15 @@ export const books = [
 		three: 'jamoneroMacondo3',
 		video: '/videos/montajes/videoJamonero.webm',
 		categoria: 'Bandejas'
+	},
+	{
+		id: 'cajaSeparador',
+		title: 'Referencia: jamoneroMacondo',
+		img: '/catalogo/JamoneroSinImpresion.png',
+		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
+		author: 'Vicente Latorre',
+		three: 'CajaSeparador4',
+		video: '/videos/montajes/videoJamonero.webm',
+		categoria: 'Bandejas'
 	}
 ]

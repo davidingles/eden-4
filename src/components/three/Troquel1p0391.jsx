@@ -2,13 +2,14 @@ import { useState, useEffect, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { AnimationMixer } from 'three'
-import { OrbitControls, ContactShadows } from '@react-three/drei'
+import { OrbitControls, ContactShadows, useGLTF } from '@react-three/drei'
 
 const Models = [
 	// { title: 'Hammer', url: './models/hammer.glb' },
 	// { title: 'Drill', url: './models/drill.glb' },
 	// { title: 'Tape Measure', url: './models/tapeMeasure.glb' },
 	// { title: 'blender', url: './models/blender.gltf' },
+	{ title: 'CajaSeparador4', url: './gltf/CajaSeparador4.glb' },
 	{ title: 'jamoneroMacondo2', url: './gltf/jamoneroMacondo2.glb' },
 	{ title: 'jamoneroMacondo3', url: './gltf/jamoneroMacondo3.glb' },
 	{ title: '1p0391', url: './gltf/1p0391.glb' },
@@ -17,6 +18,7 @@ const Models = [
 export default function EstucheConAsas({ david }) {
 	const [title, setTitle] = useState(david)
 	const [isPaused, setIsPaused] = useState(false)
+
 
 	useEffect(() => {
 		setTitle(david)
@@ -60,9 +62,17 @@ function Model({ url, isPaused }) {
 	const [model, setModel] = useState(null)
 	const [mixer, setMixer] = useState(null)
 
+
 	useEffect(() => {
 		const loader = new GLTFLoader()
 		loader.load(url, (gltf) => {
+			gltf.scene.traverse((node) => {
+				if (node.isMesh) {
+					node.material.roughness = 1
+				}
+			})
+
+
 			setModel(gltf.scene)
 
 			const mixer = new AnimationMixer(gltf.scene)
@@ -84,3 +94,12 @@ function Model({ url, isPaused }) {
 		<primitive object={model} position={[0, 0, 0]} scale={[1, 1, 1]} />
 	) : null
 }
+
+
+
+// const { scene } = useGLTF(url)
+// scene.traverse((node) => {
+// 	if (node.isMesh) {
+// 		node.material.roughness = 1
+// 	}
+// })
