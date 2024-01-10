@@ -1,41 +1,48 @@
-import * as THREE from 'three'
-import { Suspense, useState, useRef, useEffect } from 'react'
+import { useRef, useState, useEffect, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { AnimationMixer } from 'three'
+import * as THREE from 'three'
 import { Stats, OrbitControls, Environment, useGLTF, Clone, Html, ContactShadows } from '@react-three/drei'
 
 const Models = [
-	// { title: 'Hammer', url: './models/hammer.glb' },
-	// { title: 'Drill', url: './models/drill.glb' },
-	// { title: 'Tape Measure', url: './models/tapeMeasure.glb' },
 	// { title: 'blender', url: './models/blender.gltf' },
 	{ title: 'jamoneroMacondo2', url: './gltf/jamoneroMacondo2.glb' },
+	{ title: 'jamoneroMacondo3', url: './gltf/jamoneroMacondo3.glb' },
 	{ title: '1p0391', url: './gltf/1p0391.glb' },
 ]
 
 function Model({ url }) {
-	const { scene } = useGLTF(url)
-	scene.traverse((node) => {
-		if (node.isMesh) {
-			node.material.roughness = 1
+	const [model, setModel] = useState(null)
+	const [mixer, setMixer] = useState(null)
+
+	useEffect(() => {
+		const loader = new GLTFLoader()
+		loader.load(url, (gltf) => {
+			setModel(gltf.scene)
+
+			const mixer = new AnimationMixer(gltf.scene)
+			setMixer(mixer)
+
+			gltf.animations.forEach((clip) => {
+				mixer.clipAction(clip).play()
+			})
+		})
+	}, [url])
+
+	useFrame((state, delta) => {
+		if (mixer) {
+			mixer.update(delta)
 		}
 	})
-	const group = useRef()
-	useFrame((state) => {
-		const t = state.clock.getElapsedTime()
-		// group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, Math.cos(t / 4) / 20 + 0.25, 0.1)
-		// group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, Math.sin(t / 8) / 10, 0.1)
-		// group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, Math.sin(t / 8) / 20, 0.1)
-		group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, (-2 + Math.sin(t)) / 90, 0.6)
-	})
-	return (
-		<group ref={group} dispose={null} position={[0, 10, 0]} scale={1}>
-			<Clone object={scene} castShadow receiveShadow />
-		</group>
-	)
+
+	return model ? (
+		<primitive object={model} position={[0, 0, 0]} scale={[1, 1, 1]} />
+	) : null
 }
 
 function Fallback() {
-	return <Html><div>Loading...</div></Html>
+	return <div>Loading...</div>
 }
 
 export default function EstucheConAsas({ david }) {
