@@ -17,74 +17,115 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 	})
 </script>
 <Layout title='Servicios de la Auxiliar'>
-	<div
-		id='botonera'
-		class='mb-8'
-	>
-		<a
-			class='opts'
-			href='#impresora'
-		>
-			Impresión</a
-		>
-		<a
-			class='opts'
-			href='#troqueladora'
-		>
-			Troquelado</a
-		>
-		<a
-			class='opts'
-			href='#pegadora'
-		>
-			Pegado</a
-		>
-		<a
-			class='opts'
-			href='#ploter'
-		>
-			Corte-Digital</a
-		>
-	</div>
-
-	<div class='flex flex-col justify-center items-center'>
+	<main class='flex flex-col overflow-y-auto'>
+		<!-- botonera================================== -->
 		<div
-			id='impresora'
-			class='vid w-[66%] flex flex-row items-center mb-4 relative'
+			id='botonera'
+			class='mb-8 flex flex-row w-full'
 		>
-			<video
-				autoplay
-				loop
-				muted
-				class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+			<a
+				class='opts'
+				href='#impresora'
 			>
-				<source src='/videos/videosServicios/videoImpresora2.webm' />
-			</video>
-			<span
-				class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
+				Impresión</a
 			>
-				Impresión flexográfica de 3 colores...
-			</span>
+			<a
+				class='opts'
+				href='#troqueladora'
+			>
+				Troquelado</a
+			>
+			<a
+				class='opts'
+				href='#pegadora'
+			>
+				Pegado</a
+			>
+			<a
+				class='opts'
+				href='#ploter'
+			>
+				Corte-Digital</a
+			>
 		</div>
+		<!-- videos================================== -->
 		<div
-			id='troqueladora'
-			class='vid w-[66%] flex flex-row items-center mb-4 relative'
+			class='flex flex-col justify-center items-center overflow-y-auto gap-16'
 		>
-			<video
-				autoplay
-				loop
-				muted
-				class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+			<div
+				id='impresora'
+				class='w-[66%] flex flex-row items-center mb-4 relative rounded-lg bordeRojo'
 			>
-				<source src='/videos/videosServicios/video-editado-troqueladora.webm' />
-			</video>
-			<span
-				class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
+				<video
+					autoplay
+					loop
+					muted
+					class='w-full aspect-square object-contain flex flex-col justify-center items-center rounded-lg m-2'
+				>
+					<source src='/videos/videosServicios/videoImpresora2.webm' />
+				</video>
+				<span
+					class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
+				>
+					Impresión flexográfica de 3 colores...
+				</span>
+			</div>
+			<div
+				id='troqueladora'
+				class='w-[66%] flex flex-row items-center mb-4 relative rounded-lg bordeRojo'
 			>
-				Troqueladora plana...
-			</span>
+				<video
+					autoplay
+					loop
+					muted
+					class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+				>
+					<source src='/videos/videosServicios/vTroqueladora.webm' />
+				</video>
+				<span
+					class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
+				>
+					Troqueladora plana...
+				</span>
+			</div>
+			<div
+				id='pegadora'
+				class='w-[66%] flex flex-row items-center mb-4 relative rounded-lg bordeRojo'
+			>
+				<video
+					autoplay
+					loop
+					muted
+					class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+				>
+					<source src='/videos/videosServicios/videoPegadora.webm' />
+				</video>
+				<span
+					class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
+				>
+					Pegadora plana...
+				</span>
+			</div>
+			<div
+				id='ploter'
+				class='w-[66%] flex flex-row items-center mb-4 relative rounded-lg bordeRojo'
+			>
+				<video
+					autoplay
+					loop
+					muted
+					class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+				>
+					<source src='/videos/videosServicios/vPloter.webm' />
+				</video>
+				<span
+					class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
+				>
+					Pegadora plana...
+				</span>
+			</div>
 		</div>
-	</div>
+	</main>
 </Layout>
 
 <style>
@@ -95,8 +136,5 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 	}
 	html {
 		scroll-behavior: smooth;
-	}
-	.vid {
-		margin-bottom: 2rem;
 	}
 </style>

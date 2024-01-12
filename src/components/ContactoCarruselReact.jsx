@@ -1,9 +1,9 @@
 import estilos from './NosotrosCarruselReact.module.css'
 import { useState, useEffect } from 'react'
 const diseño = '/img/jefes/diseño.png'
-const administracion = '/img/jefes/administracion.png'
+const administracion = '/img/jefes/admin.jpg'
 const logistica = '/img/jefes/logistica.png'
-const ventas = '/img/jefes/ventas.png'
+const ventas = '/img/jefes/sales.jpg'
 
 const depDiseño2 = [
 	{
@@ -33,7 +33,7 @@ const depDiseño2 = [
 ]
 
 export function ContactoCarruselReact() {
-	const imagenes = [diseño, administracion, logistica, ventas];
+	const imagenes = [ventas, diseño, logistica, administracion];
 
 	const [indiceSeleccionado, setIndiceSeleccionado] = useState(0);
 	const [imagenSeleccionada, setImagenSeleccionada] = useState(imagenes[0]);
@@ -67,12 +67,13 @@ export function ContactoCarruselReact() {
 	return (
 		<>
 			<div className='flex flex-col m-auto items-center justify-center '>
+
 				{/* //THUMBANILS ================================== */}
 				<div className='flex flex-row gap-4'>
 					{imagenes.map((imagen, index) => (
 						<div className='flex ' key={index}>
 							<img
-								className={`w-[222px] rounded-lg estilos.thumbnail cursor-pointer ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
+								className={`w-56 h-auto rounded overflow-hidden transition-all duration-900 ease-in-out shadow-md ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
 								src={imagen}
 								alt="fabrica"
 								onClick={() => {
@@ -85,19 +86,12 @@ export function ContactoCarruselReact() {
 				</div>
 
 
-				<div className='flex flex-row p-4 m-auto gap-4 '>
-					<button className={`${estilos.btn}`} onClick={() => { setAutoPlay(false); previous() }}>{'<'}</button>
-					<button className={`${estilos.btn}`} onClick={() => { setAutoPlay(!autoPlay) }} > {autoPlay === true ? 'STOP' : 'PLAY'}</button>
-					<button className={`${estilos.btn} btn`} onClick={() => { setAutoPlay(false); next() }}>{'>'}</button>
-				</div >
 
 
 				<div className='h-[50vh] w-[60vh] m-auto flex'>
-					{/* <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" /> */}
-					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado] || 'Cargando...'}</p>
+					<img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" />
+					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
 				</div>
-
-
 
 
 
