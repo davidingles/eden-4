@@ -2,15 +2,16 @@
 import Layout from '@/layouts/Layout.astro'
 import { ContactoCarruselReact } from '@/components/ContactoCarruselReact.jsx'
 import TextoAnimadoTelefono from '@/components/botones-sliders/TextoAnimadoTelefono.astro'
+import Logo from '@/components/icons/LogoMaps.astro'
 ---
 
 <Layout title='Contactos de la Auxiliar'>
 	<div
-		class='con rounded-lg m-auto w-full flex flex-col justify-center items-center p-2'
+		class='con rounded-lg flex h-full flex-col justify-center items-center p-2'
 	>
 		<div
 			id='contactooo'
-			class='flex flex-col justify-center items-center h-full gap-8 w-[30%] sm:w-[80%] md:w-[80%] lg:w-[70%] xl:w-[50%]'
+			class='flex flex-col items-center gap-8 w-[30%] sm:w-[80%] md:w-[80%] lg:w-[70%] xl:w-[50%]'
 		>
 			<h3 class='contacta'>Llámanos al teléfono:</h3>
 			<span class=''>
@@ -22,11 +23,18 @@ import TextoAnimadoTelefono from '@/components/botones-sliders/TextoAnimadoTelef
 					mapa:
 				</span>
 			</div>
-			<div
-				class='grid grid-cols-1 m-auto md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-10'
-			>
-			</div>
 		</div>
+
+		<a
+			class='spin p-4'
+			target='_blank'
+			href='https://maps.app.goo.gl/QZcyPLooNu41XfmS6'
+		>
+			<Logo
+				style='width:111px'
+				fill='fill:rgb(255,0,0)'
+			/>
+		</a>
 		<ContactoCarruselReact client:load />
 	</div>
 </Layout>
@@ -49,5 +57,17 @@ import TextoAnimadoTelefono from '@/components/botones-sliders/TextoAnimadoTelef
 	}
 	:global(html) {
 		scroll-behavior: smooth;
+	}
+	@keyframes spin {
+		0% {
+			transform: rotateY(0deg);
+		}
+		100% {
+			transform: rotateY(1turn);
+		}
+	}
+
+	.spin {
+		animation: spin 6s linear infinite;
 	}
 </style>

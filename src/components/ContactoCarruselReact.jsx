@@ -9,11 +9,28 @@ const misImagenes = {
 };
 
 const misTextos = {
-	ventas: "ventas@laauxiliar.es Miguel Angel Latorre 123456789",
-	diseño: "dg@laauxiliar.es Vicente Latorre 123456789",
-	logistica: "logistica@laauxiliar.es Angel Latorre 123456789",
-	admin: "administracion@laauxiliar.es Jesus Latorre 123456789",
+	ventas: {
+		email: "ventas@laauxiliar.es",
+		nombre: "Miguel Angel Latorre",
+		telefono: "123456789"
+	},
+	diseño: {
+		email: "dg@laauxiliar.es",
+		nombre: "Vicente Latorre",
+		telefono: "123456789"
+	},
+	logistica: {
+		email: "logistica@laauxiliar.es",
+		nombre: "Angel Latorre",
+		telefono: "123456789"
+	},
+	admin: {
+		email: "administracion@laauxiliar.es",
+		nombre: "Jesus Latorre",
+		telefono: "123456789"
+	},
 }
+const claves = ['ventas', 'diseño', 'logistica', 'admin'];
 
 export function ContactoCarruselReact() {
 	const imagenes = [misImagenes.ventas, misImagenes.diseño, misImagenes.logistica, misImagenes.administracion];
@@ -78,7 +95,11 @@ export function ContactoCarruselReact() {
 					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
 				</div> */}
 
-				<p className='m-16 font-bold text-3xl text-[var(--auxi1)]'>{textos[indiceSeleccionado]}</p>
+				<p className='m-16 font-bold text-3xl text-[var(--auxi1)] flex flex-col justify-center items-center'>
+					<span>{misTextos[claves[indiceSeleccionado]].email}<br /></span>
+					<span>{misTextos[claves[indiceSeleccionado]].nombre}<br /></span>
+					<span>{misTextos[claves[indiceSeleccionado]].telefono}</span>
+				</p>
 
 
 			</div >
