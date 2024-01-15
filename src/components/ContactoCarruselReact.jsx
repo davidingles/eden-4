@@ -1,52 +1,34 @@
 import estilos from './NosotrosCarruselReact.module.css'
 import { useState, useEffect } from 'react'
-const diseño = '/img/jefes/diseño.png'
-const administracion = '/img/jefes/admin.jpg'
-const logistica = '/img/jefes/logistica.png'
-const ventas = '/img/jefes/sales.jpg'
 
-const depDiseño2 = [
-	{
-		departamento: "diseño",
-		email: "dg@laauxiliar.es",
-		telefono: "123456789",
-		responsable: "Vicente Latorre",
-	},
-	{
-		departamento: "ventas",
-		email: "dg@laauxiliar.es",
-		telefono: "123456789",
-		responsable: "Vicente Latorre",
-	},
-	{
-		departamento: "logistica",
-		email: "dg@laauxiliar.es",
-		telefono: "123456789",
-		responsable: "Vicente Latorre",
-	},
-	{
-		departamento: "admin",
-		email: "dg@laauxiliar.es",
-		telefono: "123456789",
-		responsable: "Vicente Latorre",
-	}
-]
+const misImagenes = {
+	diseño: '/img/jefes/diseño.png',
+	administracion: '/img/jefes/admin.jpg',
+	logistica: '/img/jefes/logistica.png',
+	ventas: '/img/jefes/sales.jpg',
+};
+
+const misTextos = {
+	ventas: "ventas@laauxiliar.es Miguel Angel Latorre 123456789",
+	diseño: "dg@laauxiliar.es Vicente Latorre 123456789",
+	logistica: "logistica@laauxiliar.es Angel Latorre 123456789",
+	admin: "administracion@laauxiliar.es Jesus Latorre 123456789",
+}
 
 export function ContactoCarruselReact() {
-	const imagenes = [ventas, diseño, logistica, administracion];
+	const imagenes = [misImagenes.ventas, misImagenes.diseño, misImagenes.logistica, misImagenes.administracion];
 
 	const [indiceSeleccionado, setIndiceSeleccionado] = useState(0);
 	const [imagenSeleccionada, setImagenSeleccionada] = useState(imagenes[0]);
 	const [loaded, setLoaded] = useState(true);
 	const [autoPlay, setAutoPlay] = useState(true);
-	let textos = 'hola'
-
+	let textos = [misTextos.ventas, misTextos.diseño, misTextos.logistica, misTextos.admin]
 
 	useEffect(() => {
 		if (autoPlay) {
 			const interval = setInterval(() => {
 				nuevaImagenSeleccionada(indiceSeleccionado, imagenes, true);
-			}, 3000);
+			}, 5000);
 			return () => clearInterval(interval);
 		}
 	});
@@ -69,31 +51,34 @@ export function ContactoCarruselReact() {
 			<div className='flex flex-col m-auto items-center justify-center '>
 
 				{/* //THUMBANILS ================================== */}
-				<div className='flex flex-row gap-4'>
+				<div className='flex flex-row bordeRojo gap-4 justify-center'>
 					{imagenes.map((imagen, index) => (
-						<div className='flex ' key={index}>
+						<div className='flex' key={index}>
 							<img
-								className={`w-56 h-auto rounded overflow-hidden transition-all duration-900 ease-in-out shadow-md ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
+								className={` ${index !== indiceSeleccionado ? estilos.thumbnail2 : estilos.thumbnail}`}
 								src={imagen}
 								alt="fabrica"
 								onClick={() => {
 									setImagenSeleccionada(imagen);
 									setIndiceSeleccionado(index);
+									setAutoPlay(false);
 								}}
 							/>
 						</div>
 					))}
 				</div>
 
+				{/* w-56 h-56 rounded bordeVerde overflow-hidden transition-all duration-900 ease-in-out  */}
 
 
 
-				<div className='h-[50vh] w-[60vh] m-auto flex'>
+				{/* IMAGEN PRINCIPAL================================== */}
+				{/* <div className='h-[50vh] w-[60vh] m-auto flex'>
 					<img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" />
 					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
-				</div>
+				</div> */}
 
-
+				<p className='m-16 font-bold text-3xl text-[var(--auxi1)]'>{textos[indiceSeleccionado]}</p>
 
 
 			</div >

@@ -24,23 +24,24 @@
   opacity: 1;
 }
 
-.thumbnail {
+.thumbnail,
+.thumbnail2 {
+  border: solid 1px white;
+  border-radius: .5rem;
   width: 222px;
   height: auto;
-  border-radius: 1rem;
   overflow: hidden;
-  transition: all .9s ease;
+}
 
+.thumbnail {
+  transition: all .9s ease;
   translate: 5px 0px;
-  box-shadow: 2px 2px 11px 2px rgb(0 0 0 / 20%);
+  box-shadow: 2px 2px 22px 2px rgb(0 0 0 / 40%);
 }
 
 .thumbnail2 {
-  width: 222px;
-  height: auto;
-  border-radius: 1rem;
-  overflow: hidden;
-  opacity: .6;
+  opacity: .7;
   scale: .9;
   transition: all .3s ease;
+  box-shadow: 1px 1px 6px 1px rgb(0 0 0 / 40%);
 }
