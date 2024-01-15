@@ -68,7 +68,7 @@ export function ContactoCarruselReact() {
 			<div className='flex flex-col m-auto items-center justify-center '>
 
 				{/* //THUMBANILS ================================== */}
-				<div className='flex flex-row bordeRojo gap-4 justify-center'>
+				<div className='flex flex-row  gap-4 justify-center cursor-pointer'>
 					{imagenes.map((imagen, index) => (
 						<div className='flex' key={index}>
 							<img

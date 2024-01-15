@@ -46,8 +46,8 @@ export function NosotrosCarruselReact() {
 
 
         <div className='h-[50vh] w-[60vh] m-auto flex'>
-          <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" />
-          <p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
+          <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""} `} src={imagenSeleccionada} alt="nave de la auxiliar" />
+          <p className='p-8 m-auto text-sm w-56 '>{textos[indiceSeleccionado]}</p>
         </div>
 
 
@@ -69,6 +69,7 @@ export function NosotrosCarruselReact() {
                 onClick={() => {
                   setImagenSeleccionada(imagen);
                   setIndiceSeleccionado(index);
+                  setAutoPlay(false);
                 }}
               />
             </div>

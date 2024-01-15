@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
+import LogoFlechaSube from '@/components/icons/LogoFlechaSube.astro'
 ---
 
 <script>
@@ -17,12 +18,15 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 	})
 </script>
 <Layout title='Servicios de la Auxiliar'>
-	<main class='flex flex-col overflow-y-auto'>
-		<!-- botonera================================== -->
+	<main class='relative flex flex-col overflow-y-auto'>
 		<div
-			id='botonera'
-			class='mb-8 flex flex-row w-full'
+			class='absolute top-0 left-0 h-[111px] w-[full] bg-slate-500 -translate-y-[111px]'
+			id='ancla_botonera'
 		>
+			PRUEBA
+		</div>
+		<!-- botonera================================== -->
+		<div class='mb-8 flex flex-row w-full'>
 			<a
 				class='opts'
 				href='#impresora'
@@ -52,6 +56,7 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 		<div
 			class='flex flex-col justify-center items-center overflow-y-auto gap-16'
 		>
+			<!-- video impresora================================== -->
 			<div
 				id='impresora'
 				class='w-[66%] flex flex-row items-center mb-4 relative rounded-lg bordeRojo'
@@ -60,16 +65,28 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 					autoplay
 					loop
 					muted
-					class='w-full aspect-square object-contain flex flex-col justify-center items-center rounded-lg m-2'
+					class='relative w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
 				>
 					<source src='/videos/videosServicios/videoImpresora2.webm' />
 				</video>
 				<span
 					class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
 				>
-					Impresión flexográfica de 3 colores...
+					Impresora 3 colores...
 				</span>
+				<a
+					href='#ancla_botonera'
+					class='absolute top-4 right-4 bg-black opacity-70 z-50 rounded-full p-2 [box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9)]] border border-opacity-100 border-white hover:opacity-40 cursor-pointer hover:scale-105'
+				>
+					<LogoFlechaSube
+						style='width:33px height:33px'
+						fill='fill:white'
+						stroke='white'
+						strokeWidth='6'
+					/>
+				</a>
 			</div>
+			<!-- video troqueladora================================== -->
 			<div
 				id='troqueladora'
 				class='w-[66%] flex flex-row items-center mb-4 relative rounded-lg bordeRojo'
@@ -78,7 +95,7 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 					autoplay
 					loop
 					muted
-					class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+					class='relative w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
 				>
 					<source src='/videos/videosServicios/vTroqueladora.webm' />
 				</video>
@@ -87,7 +104,19 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 				>
 					Troqueladora plana...
 				</span>
+				<a
+					href='#ancla_botonera'
+					class='absolute top-4 right-4 bg-black opacity-70 z-50 rounded-full p-2 [box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9)]] border border-opacity-100 border-white hover:opacity-40 cursor-pointer hover:scale-105'
+				>
+					<LogoFlechaSube
+						style='width:33px height:33px'
+						fill='fill:white'
+						stroke='white'
+						strokeWidth='6'
+					/>
+				</a>
 			</div>
+			<!-- video pegadora ================================== -->
 			<div
 				id='pegadora'
 				class='w-[66%] flex flex-row items-center mb-4 relative rounded-lg bordeRojo'
@@ -96,16 +125,28 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 					autoplay
 					loop
 					muted
-					class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+					class='relative w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
 				>
-					<source src='/videos/videosServicios/videoPegadora.webm' />
+					<source src='/videos/videosServicios/vPegadoraMarron.webm' />
 				</video>
 				<span
 					class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
 				>
-					Pegadora plana...
+					Pegadora...
 				</span>
+				<a
+					href='#ancla_botonera'
+					class='absolute top-4 right-4 bg-black opacity-70 z-50 rounded-full p-2 [box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9)]] border border-opacity-100 border-white hover:opacity-40 cursor-pointer hover:scale-105'
+				>
+					<LogoFlechaSube
+						style='width:33px height:33px'
+						fill='fill:white'
+						stroke='white'
+						strokeWidth='6'
+					/>
+				</a>
 			</div>
+			<!-- video ploter ================================== -->
 			<div
 				id='ploter'
 				class='w-[66%] flex flex-row items-center mb-4 relative rounded-lg bordeRojo'
@@ -114,15 +155,26 @@ import SeccionVideos from '@/components/secciones/SeccionVideos.astro'
 					autoplay
 					loop
 					muted
-					class='w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
+					class='relative w-full aspect-square object-cover flex flex-col justify-center items-center rounded-lg m-2'
 				>
 					<source src='/videos/videosServicios/vPloter.webm' />
 				</video>
 				<span
 					class='flex justify-center shadow-lg w-[55%] bg-white bg-opacity-80 rounded-lg p-4 absolute top-8 left-6 z-10'
 				>
-					Pegadora plana...
+					Ploter de corte digital...
 				</span>
+				<a
+					href='#ancla_botonera'
+					class='absolute top-4 right-4 bg-black opacity-70 z-50 rounded-full p-2 [box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9)]] border border-opacity-100 border-white hover:opacity-40 cursor-pointer hover:scale-105'
+				>
+					<LogoFlechaSube
+						style='width:33px height:33px'
+						fill='fill:white'
+						stroke='white'
+						strokeWidth='6'
+					/>
+				</a>
 			</div>
 		</div>
 	</main>
