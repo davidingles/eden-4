@@ -1,5 +1,5 @@
 import estilos from './NosotrosCarruselReact.module.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const misImagenes = {
 	diseño: '/img/jefes/diseño.png',
@@ -10,58 +10,38 @@ const misImagenes = {
 
 const misTextos = {
 	ventas: {
+		dep: "Ventas",
 		email: "ventas@laauxiliar.es",
-		nombre: "Miguel Angel Latorre",
-		telefono: "123456789"
+		nombre: "Miguel Ángel Latorre",
+		telefono: "686 944 933"
 	},
 	diseño: {
+		dep: "Diseño",
 		email: "dg@laauxiliar.es",
 		nombre: "Vicente Latorre",
-		telefono: "123456789"
+		telefono: "657 842 909"
 	},
 	logistica: {
+		dep: "Logística",
 		email: "logistica@laauxiliar.es",
-		nombre: "Angel Latorre",
-		telefono: "123456789"
+		nombre: "Ángel Latorre",
+		telefono: "657 803 024"
 	},
 	admin: {
+		dep: "Administración",
 		email: "administracion@laauxiliar.es",
-		nombre: "Jesus Latorre",
-		telefono: "123456789"
+		nombre: "Jesús Latorre",
+		telefono: "686 944 932"
 	},
 }
 const claves = ['ventas', 'diseño', 'logistica', 'admin'];
 
 export function ContactoCarruselReact() {
 	const imagenes = [misImagenes.ventas, misImagenes.diseño, misImagenes.logistica, misImagenes.administracion];
-
-	const [indiceSeleccionado, setIndiceSeleccionado] = useState(0);
-	const [imagenSeleccionada, setImagenSeleccionada] = useState(imagenes[0]);
-	const [loaded, setLoaded] = useState(true);
-	const [autoPlay, setAutoPlay] = useState(true);
 	let textos = [misTextos.ventas, misTextos.diseño, misTextos.logistica, misTextos.admin]
 
-	useEffect(() => {
-		if (autoPlay) {
-			const interval = setInterval(() => {
-				nuevaImagenSeleccionada(indiceSeleccionado, imagenes, true);
-			}, 5000);
-			return () => clearInterval(interval);
-		}
-	});
-	const nuevaImagenSeleccionada = (index, imagenes, next = true) => {
-		setLoaded(false);
-		const condicion = next ? indiceSeleccionado < imagenes.length - 1 : indiceSeleccionado > 0;
-		const nuevoIndice = next ? (condicion ? indiceSeleccionado + 1 : 0) : (condicion ? indiceSeleccionado - 1 : imagenes.length - 1);
-		setIndiceSeleccionado(nuevoIndice);
-		setImagenSeleccionada(imagenes[nuevoIndice]);
-	};
-	const previous = () => {
-		nuevaImagenSeleccionada(indiceSeleccionado, imagenes, false);
-	};
-	const next = () => {
-		nuevaImagenSeleccionada(indiceSeleccionado, imagenes, true);
-	};
+	const [indiceSeleccionado, setIndiceSeleccionado] = useState(null);
+	const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
 
 	return (
 		<>
@@ -70,7 +50,7 @@ export function ContactoCarruselReact() {
 				{/* //THUMBANILS ================================== */}
 				<div className='flex flex-row  gap-4 justify-center cursor-pointer'>
 					{imagenes.map((imagen, index) => (
-						<div className='flex' key={index}>
+						<div className='flex  relative' key={index}>
 							<img
 								className={` ${index !== indiceSeleccionado ? estilos.thumbnail2 : estilos.thumbnail}`}
 								src={imagen}
@@ -78,31 +58,26 @@ export function ContactoCarruselReact() {
 								onClick={() => {
 									setImagenSeleccionada(imagen);
 									setIndiceSeleccionado(index);
-									setAutoPlay(false);
 								}}
+
 							/>
+							<span className={`${index !== indiceSeleccionado ? estilos.dav : estilos.david}`}>
+								{/* {indiceSeleccionado !== null ? misTextos[claves[index]].dep : ''} */}
+								{misTextos[claves[index]].dep}
+
+							</span>
 						</div>
 					))}
 				</div>
 
-				{/* w-56 h-56 rounded bordeVerde overflow-hidden transition-all duration-900 ease-in-out  */}
-
-
-
-				{/* IMAGEN PRINCIPAL================================== */}
-				{/* <div className='h-[50vh] w-[60vh] m-auto flex'>
-					<img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""}`} src={imagenSeleccionada} alt="nave de la auxiliar" />
-					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
-				</div> */}
-
-				<p className='m-16 font-bold text-3xl  flex flex-col justify-center items-center'>
-					<span>{misTextos[claves[indiceSeleccionado]].email}<br /></span>
-					<span>{misTextos[claves[indiceSeleccionado]].nombre}<br /></span>
-					<span>{misTextos[claves[indiceSeleccionado]].telefono}</span>
-				</p>
 
 
 			</div >
+			<p className='m-16 font-bold text-3xl  flex flex-col justify-center items-center min-h-[7rem]'>
+				<span>{indiceSeleccionado !== null ? misTextos[claves[indiceSeleccionado]].nombre : ' '}<br /></span>
+				<span>{indiceSeleccionado !== null ? misTextos[claves[indiceSeleccionado]].email : ' '}<br /></span>
+				<span>{indiceSeleccionado !== null ? misTextos[claves[indiceSeleccionado]].telefono : ' '}</span>
+			</p>
 		</>
 	);
 }

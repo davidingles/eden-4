@@ -34,14 +34,45 @@
 }
 
 .thumbnail {
-  transition: all .9s ease;
-  translate: 5px 0px;
-  box-shadow: 2px 2px 22px 2px rgb(0 0 0 / 40%);
+  border: rgb(247, 215, 87) solid 2px;
+  box-shadow: 1px 1px 2px 1px rgb(0 0 0 / 20%);
+
 }
 
 .thumbnail2 {
-  opacity: .7;
-  scale: .9;
-  transition: all .3s ease;
-  box-shadow: 1px 1px 6px 1px rgb(0 0 0 / 40%);
+  /* transition: all .3s ease; */
+  box-shadow: 1px 1px 12px 1px rgb(0 0 0 / 40%);
+
+}
+
+.thumbnail2:hover {
+  border: rgb(247, 215, 87) solid 2px;
+}
+
+.dav,
+.david {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+.dav:hover,
+.david:hover {
+  color: red;
+  border: solid 1px;
+}
+
+.dav {
+  color: black;
+  background-color: rgb(255, 255, 255);
+}
+
+.david {
+  font-weight: bold;
+  background-color: rgb(247, 215, 87);
+
 }
