@@ -2,10 +2,10 @@
 	class='flex flex-col justify-center items-center'
 	href='/contacto'
 >
-	<span class='actual-text text-[1rem] text-[var(--auxi2)]'
+	<span class='actual-text text-[2rem] text-white numero'
 		>&nbsp;968 693 575&nbsp;</span
 	>
-	<span class='hover-text text-[1rem]'>&nbsp;968 693 575&nbsp;</span>
+	<span class='hover-text text-[2rem]'>&nbsp;968 693 575&nbsp;</span>
 </a>
 
 <style>
@@ -16,8 +16,6 @@
 		font-size: 2.5rem;
 		font-family: 'Arial';
 		position: relative;
-		/* color: transparent; */
-		/* -webkit-text-stroke: 1px var(--text-stroke-color); */
 	}
 	.actual-text {
 	}
@@ -32,10 +30,19 @@
 		transition: 1s;
 		-webkit-text-stroke: 0px var(--auxi1);
 		color: var(--auxi1);
-		/* mix-blend-mode: multiply; */
 	}
 	/* hover */
 	a:hover .hover-text {
 		width: 100%;
+	}
+	:global(.light) .numero {
+		color: rgb(55, 55, 55);
+	}
+	:global(.light) .hover-text {
+		border-right: 2px solid var(--auxi2);
+		overflow: hidden;
+		transition: 1s;
+		-webkit-text-stroke: 0px var(--auxi2);
+		color: var(--auxi2);
 	}
 </style>

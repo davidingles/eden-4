@@ -6,58 +6,38 @@ import Logo from '@/components/icons/LogoMaps.astro'
 ---
 
 <Layout title='Contactos de la Auxiliar'>
-	<div
-		class='contacto rounded-lg flex flex-col h-full items-center p-2 bordeVerde overflow-y-hidden'
-	>
+	<div class='contacto rounded-lg flex flex-col h-full items-center w-full'>
 		<div
-			id='contactooo'
-			class='flex flex-col items-center gap-8 w-[30%] sm:w-[80%] md:w-[80%] lg:w-[70%] xl:w-[50%]'
+			class='numero text-white font-bold text-2xl flex flex-col justify-center items-center w-full p-4'
 		>
-			<h3 class='contacta'>Llámanos al teléfono:</h3>
-			<span class=''>
-				<TextoAnimadoTelefono />
-			</span>
-			<div class=''>
-				<span class='contacta'>
-					O contacta con el departamente que necesites o encuentranos en el
-					mapa:
+			<section class='flex pr-4'>
+				<h3 class='contacta pr-4'>Llámanos al teléfono:</h3>
+				<span class=''>
+					<TextoAnimadoTelefono />
 				</span>
-			</div>
+			</section>
+			<section class='flex items-center'>
+				<span class=''> Encuéntranos en el mapa:</span>
+				<a
+					class='spin p-4 blend text-blue-500 mix-blend-multiply'
+					target='_blank'
+					href='https://maps.app.goo.gl/QZcyPLooNu41XfmS6'
+				>
+					<Logo
+						style='width:44px'
+						fill='fill:currentColor;'
+					/>
+				</a>
+			</section>
+			<span class=''> Contacta con el departamento que necesites:</span>
 		</div>
 
-		<a
-			class='spin p-4'
-			target='_blank'
-			href='https://maps.app.goo.gl/QZcyPLooNu41XfmS6'
-		>
-			<Logo
-				style='width:111px'
-				fill='fill:rgb(255,0,0)'
-			/>
-		</a>
+		<!-- CARRUSEL===================================== -->
 		<ContactoCarruselReact client:load />
 	</div>
 </Layout>
 
 <style>
-	/* .contacto {
-		background-color: #202020;
-	}
-	:global(.light) .contacto {
-		background-color: #fff;
-	} */
-	:global(.light) .contacta {
-		color: var(--auxi2);
-	}
-	a {
-		scroll-behavior: smooth;
-	}
-	html {
-		scroll-behavior: smooth;
-	}
-	:global(html) {
-		scroll-behavior: smooth;
-	}
 	@keyframes spin {
 		0% {
 			transform: rotateY(0deg);
@@ -70,4 +50,12 @@ import Logo from '@/components/icons/LogoMaps.astro'
 	.spin {
 		animation: spin 6s linear infinite;
 	}
+	:global(.light) .numero {
+		color: rgb(55, 55, 55);
+		background-color: rgb(247, 215, 87);
+	}
+	/* :global(.light) .contacto {
+		background-color: #96cdee;
+	} */
 </style>
+<!-- 96cdee -->

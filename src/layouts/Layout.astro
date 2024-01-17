@@ -100,6 +100,10 @@ const { title } = Astro.props
 			background-size: 224px;
 			scroll-behavior: smooth;
 		}
+		::selection {
+			background-color: var(--auxi1);
+			color: white;
+		}
 		.body {
 			display: grid;
 			grid-template-areas:
@@ -111,7 +115,7 @@ const { title } = Astro.props
 		}
 		.light .body {
 			background-color: white;
-			color: black;
+			color: rgb(55, 55, 55);
 		}
 		.asideMenu {
 			height: calc(100vh - 104px);

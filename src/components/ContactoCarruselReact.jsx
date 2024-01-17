@@ -95,7 +95,7 @@ export function ContactoCarruselReact() {
 					<p className='m-8 text-sm h-[40vh]'>{textos[indiceSeleccionado]}</p>
 				</div> */}
 
-				<p className='m-16 font-bold text-3xl text-[var(--auxi1)] flex flex-col justify-center items-center'>
+				<p className='m-16 font-bold text-3xl  flex flex-col justify-center items-center'>
 					<span>{misTextos[claves[indiceSeleccionado]].email}<br /></span>
 					<span>{misTextos[claves[indiceSeleccionado]].nombre}<br /></span>
 					<span>{misTextos[claves[indiceSeleccionado]].telefono}</span>

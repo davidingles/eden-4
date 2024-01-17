@@ -47,7 +47,7 @@ export function NosotrosCarruselReact() {
 
         <div className='h-[50vh] w-[60vh] m-auto flex'>
           <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""} `} src={imagenSeleccionada} alt="nave de la auxiliar" />
-          <p className='p-8 m-auto text-sm w-56 '>{textos[indiceSeleccionado]}</p>
+          <p className='p-8 m-auto text-sm w-56 [text:] '>{textos[indiceSeleccionado]}</p>
         </div>
 
 
