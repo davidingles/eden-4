@@ -22,7 +22,7 @@ export function NosotrosCarruselReact() {
     if (autoPlay) {
       const interval = setInterval(() => {
         nuevaImagenSeleccionada(indiceSeleccionado, imagenes, true);
-      }, 3000);
+      }, 300000);
       return () => clearInterval(interval);
     }
   });
@@ -42,16 +42,16 @@ export function NosotrosCarruselReact() {
 
   return (
     <>
-      <div className='flex flex-col m-auto items-center justify-center '>
+      <div className='p-4 max-w-full max-h-full flex flex-col items-center justify-center '>
 
-
-        <div className='h-[50vh] w-[60vh] m-auto flex'>
+        {/* IMAGEN GRANDE================================== */}
+        <div className={`${estilos.contenedorImagen} max-h-[50vh] max-w-[60vh]`}>
           <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""} `} src={imagenSeleccionada} alt="nave de la auxiliar" />
-          <p className='p-8 m-auto text-lg font-bold w-auto text-clip  '>{textos[indiceSeleccionado]}</p>
+          <p className='p-8 m-auto text-lg font-bold w-auto text-balance'>{textos[indiceSeleccionado]}</p>
         </div>
 
 
-
+        {/* BOTONES ================================== */}
         <div className='flex flex-row p-4 m-auto gap-4 '>
           <button className={`${estilos.btn}`} onClick={() => { setAutoPlay(false); previous() }}>{'<'}</button>
           <button className={`${estilos.btn}`} onClick={() => { setAutoPlay(!autoPlay) }} > {autoPlay === true ? 'STOP' : 'PLAY'}</button>
