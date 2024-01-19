@@ -7,7 +7,7 @@ const misVideos = {
 		email: "ventas@laauxiliar.es",
 		nombre: "Miguel Ángel Latorre",
 		telefono: "686 944 933",
-		src: '/videos/videosServicios/videoImpresora2.webm'
+		src: '/videos/videosServicios/vImpresora.webm'
 	},
 	troquelado: {
 		dep: "Troquelado",
@@ -45,7 +45,7 @@ export function ServiciosCarruselReact() {
 			<div className='flex flex-col m-auto items-center justify-center '>
 
 				{/* //THUMBANILS ================================== */}
-				<div className='flex flex-row  gap-4 justify-center cursor-pointer'>
+				<div className='flex flex-row max-w-[777px]  gap-4 justify-center cursor-pointer'>
 					{videos.map((video, index) => (
 						<div className='flex  relative' key={index}>
 							<video
@@ -72,8 +72,8 @@ export function ServiciosCarruselReact() {
 
 
 			</div >
-			<p className='m-16 font-bold text-3xl  flex flex-col justify-center items-center min-h-[7rem]'>
-				<video autoPlay muted loop src={indiceSeleccionado !== null ? misVideos[claves[indiceSeleccionado]].src : ' '} />
+			<p className='m-16 min-w-[777px] w-[777px] flex justify-center'>
+				<video autoPlay muted loop src={indiceSeleccionado !== null ? misVideos[claves[indiceSeleccionado]].src : ' '} className={indiceSeleccionado !== null ? 'flex-none' : 'flex'} />
 			</p>
 		</>
 	);
