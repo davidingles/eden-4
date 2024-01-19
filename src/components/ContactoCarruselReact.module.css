@@ -41,13 +41,12 @@
 .thumbnail {
   border: rgb(247, 215, 87) solid 2px;
   box-shadow: 1px 1px 2px 1px rgb(0 0 0 / 20%);
-  width: calc(50% - 8px);
+
 }
 
 .thumbnail2 {
   /* transition: all .3s ease; */
   box-shadow: 1px 1px 12px 1px rgb(0 0 0 / 40%);
-  opacity: .5;
 }
 
 .thumbnail2:hover {
@@ -87,22 +86,8 @@
   flex-direction: row;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1250px) {
   .contenedorImagen {
     flex-direction: column;
-  }
-}
-
-@media (max-width: 1150px) {
-  .thumbnailContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .thumbnailContainer {
-    display: none;
   }
 }

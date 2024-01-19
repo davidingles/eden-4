@@ -42,10 +42,10 @@ export function NosotrosCarruselReact() {
 
   return (
     <>
-      <div className='p-4 max-w-full max-h-full flex flex-col items-center justify-center '>
+      <div className='p-4 max-w-full max-h-full  flex flex-col items-center justify-center '>
 
         {/* IMAGEN GRANDE================================== */}
-        <div className={`${estilos.contenedorImagen} max-h-[50vh] max-w-[60vh]`}>
+        <div className={`${estilos.contenedorImagen} h-[50vh] max-w-[60vh]`}>
           <img onLoad={() => setLoaded(true)} className={`${estilos.foto} ${loaded ? estilos.loaded : ""} `} src={imagenSeleccionada} alt="nave de la auxiliar" />
           <p className='p-8 m-auto text-lg font-bold w-auto text-balance'>{textos[indiceSeleccionado]}</p>
         </div>
@@ -59,7 +59,7 @@ export function NosotrosCarruselReact() {
         </div >
 
         {/* //THUMBANILS ================================== */}
-        <div className='flex flex-row gap-4'>
+        <div className={`${estilos.thumbnailContainer} flex flex-row gap-4`}>
           {imagenes.map((imagen, index) => (
             <div className='flex ' key={index}>
               <img

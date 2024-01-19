@@ -1,4 +1,4 @@
-import estilos from './NosotrosCarruselReact.module.css'
+import estilos from './ContactoCarruselReact.module.css'
 import { useState } from 'react'
 
 const misImagenes = {
