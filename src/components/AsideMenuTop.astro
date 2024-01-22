@@ -3,13 +3,14 @@ import MenuReact from '@/components/menuReact.jsx'
 import Logo from '@/components/icons/LogoAuxCompleto.astro'
 ---
 
-<div class='asideMenu2 bg-[#222] rounded-lg flex flex-col m-2'>
-	<div class='p-4 flex justify-center m-2 logo-animation3'><Logo /></div>
-	<MenuReact
-		client:load
-		transition:name='menu-react'
-		transition:persist
-	/>
+<div class='asideMenu2 bg-[#f0f] rounded-lg flex flex-col'>
+	<div class='m-2 flex flex-row'>
+		<MenuReact
+			client:load
+			transition:name='menu-react'
+			transition:persist
+		/>
+	</div>
 </div>
 
 <style>

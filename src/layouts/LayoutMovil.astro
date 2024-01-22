@@ -1,0 +1,31 @@
+---
+import AsideMenu from '@/components/AsideMenu.astro'
+import FooterMenu from '@/components/footer/FooterMenu.astro'
+import Footer from '@/components/footer/footer-old/Footer.astro'
+import HeaderMenu from '@/components/header/HeaderMenu.astro'
+---
+
+<html lang='es'>
+	<body class='flex flex-col border-8 border-red-800'>
+		<div class='p-2 overflow-y-auto w-full'>
+			<AsideMenu />
+		</div>
+		<div class=''>
+			<HeaderMenu />
+		</div>
+		<div class='p-2 m-2'>
+			<slot />
+		</div>
+		<div class='h-[88px]'>
+			<FooterMenu />
+		</div>
+		<div class='bg-black'>
+			<Footer />
+		</div>
+	</body>
+
+	<style>
+		body {
+		}
+	</style>
+</html>

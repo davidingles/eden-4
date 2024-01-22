@@ -1,8 +1,9 @@
 ---
-import LayoutMovil from './LayoutMovil.astro'
-import LayoutPantalla from './LayoutPantalla.astro'
-import LayPantalla from '@/components/LayPantalla.astro'
-import LayMovil from '@/components/LayMovil.astro'
+import AsideMenu from '@/components/AsideMenu.astro'
+import FooterMenu from '@/components/footer/FooterMenu.astro'
+import Footer from '@/components/footer/footer-old/Footer.astro'
+import HeaderMenu from '@/components/header/HeaderMenu.astro'
+import MenuReact from '@/components/menuReact'
 interface Props {
 	title: string
 }
@@ -33,9 +34,46 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body class='body dil-barra-desplazamiento'>
-		<div class='layout-movil'><LayMovil><slot /></LayMovil></div>
-		<div class='layout-pantalla'><LayPantalla><slot /></LayPantalla></div>
+		<!--  -->
+		<!--  -->
+		<!-- //!!!: ASIDE ================================= -->
+		<div
+			class='asideMenu p-2 [grid-area:aside] flex flex-col overflow-y-auto w-full'
+		>
+			<AsideMenu />
+		</div>
+		<!-- //!!!: ASIDE ================================= -->
+		<!--  -->
+		<!--  -->
+		<!-- //!!!:BODY ================================= -->
+		<div class='mainMenu [grid-area:main] overflow-y-auto'>
+			<!-- //?: header=================================== -->
+			<div class=''>
+				<HeaderMenu />
+			</div>
+			<!-- //?: header=================================== -->
+			<div class='vid p-2 m-2'>
+				<slot />
+			</div>
+		</div>
 	</body>
+	<!-- //!!!:BODY ================================= -->
+	<!--  -->
+	<!--  -->
+	<!-- //!!!: FOOTER ================================= -->
+	<div
+		class='[grid-area:footer] h-[88px] flex flex-col justify-center items-center'
+	>
+		<FooterMenu />
+	</div>
+	<div
+		class='[grid-area:aviso] bg-black flex flex-col justify-center items-center'
+	>
+		<Footer />
+	</div>
+	<!-- //!!!: FOOTER ================================= -->
+	<!--  -->
+	<!--  -->
 
 	<style is:global>
 		:root {
@@ -66,21 +104,14 @@ const { title } = Astro.props
 			background-color: var(--auxi1);
 			color: white;
 		}
-		@media screen and (min-width: 600px) {
-			.layout-pantalla {
-				display: block;
-			}
-			.layout-movil {
-				display: none;
-			}
-		}
-		@media screen and (max-width: 599px) {
-			.layout-movil {
-				display: block;
-			}
-			.layout-pantalla {
-				display: none;
-			}
+		.body {
+			display: grid;
+			grid-template-areas:
+				'aside main main'
+				'footer footer footer'
+				'aviso aviso aviso';
+			grid-template-columns: 225px 1fr;
+			grid-template-rows: 1fr auto;
 		}
 
 		.light .body {

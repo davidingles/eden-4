@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import estilos from './menuReact.module.css';
 import { IconHome, IconContact, IconCatalogo, IconServices, IconNosotros } from './icons/IconHome';
+import Logo from './icons/LogoAuxCompleto.astro'
 
 const menu = [
 
@@ -41,6 +42,7 @@ const MenuReact = () => {
 
   return (
     <li className='flex flex-col '>
+      {/* <Logo /> */}
       {menu && menu.map((item, index) => (
         < a
           key={index}
