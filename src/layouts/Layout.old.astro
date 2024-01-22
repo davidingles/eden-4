@@ -1,7 +1,5 @@
 ---
 import AsideMenu from '@/components/AsideMenu.astro'
-import LayMovil from '@/components/LayMovil.astro'
-import LayPantalla from '@/components/LayPantalla.astro'
 import FooterMenu from '@/components/footer/FooterMenu.astro'
 import Footer from '@/components/footer/footer-old/Footer.astro'
 import HeaderMenu from '@/components/header/HeaderMenu.astro'
@@ -36,17 +34,46 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body class='body dil-barra-desplazamiento'>
-		<div class='lay-pantalla'>
-			<LayPantalla>
-				<slot />
-			</LayPantalla>
+		<!--  -->
+		<!--  -->
+		<!-- //!!!: ASIDE ================================= -->
+		<div
+			class='asideMenu p-2 [grid-area:aside] flex flex-col overflow-y-auto w-full'
+		>
+			<AsideMenu />
 		</div>
-		<div class='lay-movil'>
-			<LayMovil>
+		<!-- //!!!: ASIDE ================================= -->
+		<!--  -->
+		<!--  -->
+		<!-- //!!!:BODY ================================= -->
+		<div class='mainMenu [grid-area:main] overflow-y-auto'>
+			<!-- //?: header=================================== -->
+			<div class=''>
+				<HeaderMenu />
+			</div>
+			<!-- //?: header=================================== -->
+			<div class='vid p-2 m-2'>
 				<slot />
-			</LayMovil>
+			</div>
 		</div>
 	</body>
+	<!-- //!!!:BODY ================================= -->
+	<!--  -->
+	<!--  -->
+	<!-- //!!!: FOOTER ================================= -->
+	<div
+		class='[grid-area:footer] h-[88px] flex flex-col justify-center items-center'
+	>
+		<FooterMenu />
+	</div>
+	<div
+		class='[grid-area:aviso] bg-black flex flex-col justify-center items-center'
+	>
+		<Footer />
+	</div>
+	<!-- //!!!: FOOTER ================================= -->
+	<!--  -->
+	<!--  -->
 
 	<style is:global>
 		:root {
@@ -73,27 +100,19 @@ const { title } = Astro.props
 			background-size: 224px;
 			scroll-behavior: smooth;
 		}
-		.lay-movil {
-			display: flex;
-		}
-		.lay-pantalla {
-			display: none;
-		}
-
-		@media screen and (min-width: 700px) {
-			.lay-pantalla {
-				display: block;
-			}
-			.lay-movil {
-				display: none;
-			}
-		}
-
 		::selection {
 			background-color: var(--auxi1);
 			color: white;
 		}
-
+		.body {
+			display: grid;
+			grid-template-areas:
+				'aside main main'
+				'footer footer footer'
+				'aviso aviso aviso';
+			grid-template-columns: 225px 1fr;
+			grid-template-rows: 1fr auto;
+		}
 		.light .body {
 			background-color: white;
 			color: rgb(55, 55, 55);
