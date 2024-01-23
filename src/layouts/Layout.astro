@@ -1,11 +1,6 @@
 ---
-import AsideMenu from '@/components/AsideMenu.astro'
 import LayMovil from '@/components/LayMovil.astro'
 import LayPantalla from '@/components/LayPantalla.astro'
-import FooterMenu from '@/components/footer/FooterMenu.astro'
-import Footer from '@/components/footer/footer-old/Footer.astro'
-import HeaderMenu from '@/components/header/HeaderMenu.astro'
-import MenuReact from '@/components/menuReact'
 interface Props {
 	title: string
 }
@@ -80,7 +75,7 @@ const { title } = Astro.props
 			display: none;
 		}
 
-		@media screen and (min-width: 700px) {
+		@media screen and (min-width: 768px) {
 			.lay-pantalla {
 				display: block;
 			}

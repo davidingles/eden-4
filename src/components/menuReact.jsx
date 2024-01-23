@@ -40,30 +40,24 @@ const MenuReact = () => {
   }, [])
 
   return (
-    <li className='flex flex-col '>
+    <div className="grid grid-cols-3 md:flex md:flex-col gap-0 md:gap-4">
       {menu && menu.map((item, index) => (
-        < a
+        <a
           key={index}
           href={item.link}
           className={`${estilos.mena} ${currentPage === item.link ? estilos.david : ''}`}
         >
-
-          <div className={estilos.menadiv} style={{ marginLeft: '1rem', display: 'flex' }} >{item.title}</div>
-          <div
-            style={{ display: 'flex', flex: '1', justifyContent: 'end', marginRight: '1rem' }}>
+          <div className={estilos.menadiv} style={{ marginLeft: '1rem', display: 'flex' }}>{item.title}</div>
+          <div style={{ display: 'flex', flex: '1', justifyContent: 'end', marginRight: '1rem' }}>
             {item.icon === 'us' && <IconHome />}
             {item.icon === 'home' && <IconNosotros />}
             {item.icon === 'services' && <IconServices />}
             {item.icon === 'contact' && <IconContact />}
             {item.icon === 'catalogo' && <IconCatalogo />}
           </div>
-
         </a>
-      ))
-      }
-
-    </li >
-
+      ))}
+    </div>
   );
 };
 
