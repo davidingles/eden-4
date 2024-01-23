@@ -42,7 +42,7 @@ export function NosotrosCarruselReact() {
 
   return (
     <>
-      <div className='p-4 max-w-full max-h-full  flex flex-col items-center justify-center '>
+      <div className='relative border border-red-500 p-4 max-w-full max-h-full  flex flex-col items-center justify-center '>
 
         {/* IMAGEN GRANDE================================== */}
         <div className={`${estilos.contenedorImagen} h-[50vh] max-w-[60vh]`}>
@@ -52,10 +52,17 @@ export function NosotrosCarruselReact() {
 
 
         {/* BOTONES ================================== */}
-        <div className='flex flex-row p-4 m-auto gap-4 '>
+        <div className='hidden sm:flex flex-row p-4 m-auto gap-4'>
           <button className={`${estilos.btn}`} onClick={() => { setAutoPlay(false); previous() }}>{'<'}</button>
           <button className={`${estilos.btn}`} onClick={() => { setAutoPlay(!autoPlay) }} > {autoPlay === true ? 'STOP' : 'PLAY'}</button>
           <button className={`${estilos.btn} btn`} onClick={() => { setAutoPlay(false); next() }}>{'>'}</button>
+        </div >
+
+        {/* BOTONES ABSOLUTE ============================== */}
+        <div className='absolute -translate-x-[50%] -translate-y-[100%]  w-full z-40 top-1/2 left-1/2 sm:hidden flex flex-row  p-11'>
+          <button className='text-white border border-white py-11 text-6xl h-11 bg-white bg-opacity-30 justify-center items-center flex flex-1 rounded-xl' onClick={() => { setAutoPlay(false); previous() }}>{'<'}</button>
+          <button className='text-white m-11 invisible flex flex-1 text-4xl justify-center' onClick={() => { setAutoPlay(!autoPlay) }} > {autoPlay === true ? 'STOP' : 'PLAY'}</button>
+          <button className='text-white border border-white py-11 text-6xl bg-white bg-opacity-30 justify-center items-center rounded-xl h-11 flex flex-1 justify-end' onClick={() => { setAutoPlay(false); next() }}>{'>'}</button>
         </div >
 
         {/* //THUMBANILS ================================== */}
@@ -63,7 +70,7 @@ export function NosotrosCarruselReact() {
           {imagenes.map((imagen, index) => (
             <div className='flex ' key={index}>
               <img
-                className={`w-[222px] rounded-lg estilos.thumbnail cursor-pointer ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
+                className={`m-2 md:m-0 w-[222px] rounded-lg estilos.thumbnail cursor-pointer ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
                 src={imagen}
                 alt="fabrica"
                 onClick={() => {
