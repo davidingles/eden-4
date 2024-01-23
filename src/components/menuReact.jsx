@@ -40,7 +40,7 @@ const MenuReact = () => {
   }, [])
 
   return (
-    <div className="grid grid-cols-3 md:flex md:flex-col gap-0 md:gap-4">
+    <div className="grid w-96 md:w-auto m-auto grid-cols-3 md:flex md:flex-col gap-0 md:gap-0">
       {menu && menu.map((item, index) => (
         <a
           key={index}
@@ -62,3 +62,6 @@ const MenuReact = () => {
 };
 
 export default MenuReact;
+
+
+
