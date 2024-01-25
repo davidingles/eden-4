@@ -42,39 +42,35 @@ export function ServiciosCarruselReact() {
 
 	return (
 		<>
-			<div className='flex flex-col m-auto items-center justify-center '>
 
-				{/* //THUMBANILS ================================== */}
-				<div className='flex flex-row max-w-[777px]  gap-4 justify-center cursor-pointer'>
-					{videos.map((video, index) => (
-						<div className='flex  relative' key={index}>
-							<video
-								muted
-								autoPlay
-								loop
-								className={` ${index !== indiceSeleccionado ? estilos.thumbnail2 : estilos.thumbnail}`}
-								src={`${index !== null ? misVideos[claves[index]].src : ' '}`}
-								alt="fabrica"
-								onClick={() => {
-									setImagenSeleccionada(video);
-									setIndiceSeleccionado(index);
-								}}
+			{/* //THUMBANILS ================================== */}
+			<div className='flex flex-row m-auto max-w-[777px]  gap-4 cursor-pointer'>
+				{videos.map((video, index) => (
+					<div className='flex  relative' key={index}>
+						<video
+							muted
+							autoPlay
+							loop
+							className={` ${index !== indiceSeleccionado ? estilos.thumbnail2 : estilos.thumbnail}`}
+							src={`${index !== null ? misVideos[claves[index]].src : ' '}`}
+							alt="fabrica"
+							onClick={() => {
+								setImagenSeleccionada(video);
+								setIndiceSeleccionado(index);
+							}}
 
-							/>
-							<span className={`${index !== indiceSeleccionado ? estilos.dav : estilos.david}`}>
-								{misVideos[claves[index]].dep}
+						/>
+						<span className={`${index !== indiceSeleccionado ? estilos.dav : estilos.david}`}>
+							{misVideos[claves[index]].dep}
 
-							</span>
-						</div>
-					))}
-				</div>
-
+						</span>
+					</div>
+				))}
+			</div>
 
 
-			</div >
-			<p className='m-16 min-w-[777px] w-[777px] flex justify-center'>
-				<video autoPlay muted loop src={indiceSeleccionado !== null ? misVideos[claves[indiceSeleccionado]].src : ' '} className={indiceSeleccionado !== null ? 'flex-none' : 'flex'} />
-			</p>
+			{/* VIDEO GRANDE ================================== */}
+			<video autoPlay muted loop src={indiceSeleccionado !== null ? misVideos[claves[indiceSeleccionado]].src : ' '} className={`${indiceSeleccionado !== null ? 'flex-none' : 'flex'} m-auto mt-4 min-w-[777px] w-[777px] flex justify-center rounded-lg`} />
 		</>
 	);
 }
