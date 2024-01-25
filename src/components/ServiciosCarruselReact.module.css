@@ -55,20 +55,12 @@
 
 .dav,
 .david {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0px);
   color: black;
   width: 100%;
   text-align: center;
+  width: 222px;
 }
 
-.dav:hover,
-.david:hover {
-  color: red;
-  border: solid 1px;
-}
 
 .dav {
   color: black;
@@ -78,7 +70,6 @@
 .david {
   font-weight: bold;
   background-color: rgb(247, 215, 87);
-
 }
 
 .contenedorImagen {

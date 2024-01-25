@@ -44,9 +44,13 @@ export function ServiciosCarruselReact() {
 		<>
 
 			{/* //THUMBANILS ================================== */}
-			<div className='flex flex-row m-auto max-w-[777px]  gap-4 cursor-pointer'>
+			<div className='w-full mt-4 grid grid-cols-1  sm:grid sm:grid-cols-2 md:flex m-auto md:max-w-[777px] max-w-lg  gap-4 cursor-pointer'>
 				{videos.map((video, index) => (
-					<div className='flex  relative' key={index}>
+					<div className='mt-4 flex flex-col justify-center ' key={index}>
+						<p className={`${index !== indiceSeleccionado ? estilos.dav : estilos.david}`}>
+							{misVideos[claves[index]].dep}
+
+						</p>
 						<video
 							muted
 							autoPlay
@@ -60,10 +64,6 @@ export function ServiciosCarruselReact() {
 							}}
 
 						/>
-						<span className={`${index !== indiceSeleccionado ? estilos.dav : estilos.david}`}>
-							{misVideos[claves[index]].dep}
-
-						</span>
 					</div>
 				))}
 			</div>
