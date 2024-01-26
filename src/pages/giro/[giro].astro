@@ -1,12 +1,12 @@
 ---
-import { books } from '../data/books.js'
-import LayoutCatalogo from '../layouts/LayoutCatalogo.astro'
-import BtnEstrellas from '../components/botones-sliders/BtnEstrellas.astro'
-import Troquel1p0391 from '../components/three/Troquel1p0391.jsx'
+import { books } from '../../data/books.js'
+import LayoutCatalogo from '../../layouts/LayoutCatalogo.astro'
+import BtnEstrellas from '../../components/botones-sliders/BtnEstrellas.astro'
+import Troquel1p0391 from '../../components/three/Troquel1p0391.jsx'
 
-const { book } = Astro.params
-console.log(book)
-const bookData = books.find((b) => b.id === book)
+const { giro } = Astro.params
+console.log(giro)
+const bookData = books.find((b) => b.id === giro)
 if (!bookData) {
 	return Astro.redirect('/404')
 }
@@ -14,7 +14,7 @@ if (!bookData) {
 export function getStaticPaths() {
 	return books.map((book) => ({
 		params: {
-			book: book.id,
+			giro: book.id,
 		},
 	}))
 }
@@ -38,19 +38,26 @@ export function getStaticPaths() {
 			</nav>
 		</div>
 		<a
-			href={`/animacion/${bookData.three}`}
-			class='absolute top-1/4 p-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 inline-block text-orange-500 text-center text-sm font-bold uppercase mt-4 bg-slate-500 bg-opacity-20 rounded-full w-auto hover:transition-all hover:bg-opacity-30 hover:text-orange-400 hover:scale-105'
-			>Ver video <br />animado de montaje</a
+			href={`/${bookData.id}`}
+			class='absolute top-1/4 p-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 inline-block text-black text-center text-sm font-bold uppercase mt-4 bg-slate-500 bg-opacity-20 rounded-full w-auto hover:transition-all hover:bg-opacity-30 hover:text-orange-400 hover:scale-105'
+			>3D</a
 		>
 		<div
 			class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 bg-slate-600 text-white font-bold rounded-full bg-opacity-60 p-6 border-2 border-white border-opacity-30'
 		>
 			GÍRAME
 		</div>
-		<div class='w-full h-screen'>
+		<!-- <div class='w-full h-screen'>
 			<Troquel1p0391
 				client:load
 				david={bookData.three}
+			/>
+		</div> -->
+		<div>
+			<img
+				class='w-full h-screen object-cover'
+				src={bookData.img}
+				alt={bookData.title}
 			/>
 		</div>
 	</main>
@@ -67,4 +74,3 @@ export function getStaticPaths() {
 		color: black;
 	}
 </style>
-../components/three/Troquel1p0391.old.jsx

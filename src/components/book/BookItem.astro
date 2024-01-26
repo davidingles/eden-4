@@ -6,10 +6,10 @@ export interface Props {
 	three?: string
 }
 
-const { id, title, img } = Astro.props
+const { id, title, img, three } = Astro.props
 ---
 
-<a href=`/${id}`>
+<a href=`giro/${id}`>
 	<img
 		class='aspect-[500/500] object-cover rounded-lg pegatina'
 		src=`${img}`

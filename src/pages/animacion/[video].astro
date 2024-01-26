@@ -5,7 +5,7 @@ import BtnEstrellas from '../../components/botones-sliders/BtnEstrellas.astro'
 
 const { video } = Astro.params
 console.log({ video })
-const bookData = books.find((b) => b.three === video)
+const bookData = books.find((b) => b.id === video)
 if (!bookData) {
 	return Astro.redirect('/404')
 }
@@ -13,7 +13,7 @@ if (!bookData) {
 export function getStaticPaths() {
 	return books.map((book) => ({
 		params: {
-			video: book.three,
+			video: book.id,
 		},
 	}))
 }
@@ -40,7 +40,7 @@ export function getStaticPaths() {
 		<div class=''>
 			<video
 				class='object-scale-down h-[800px] w-full'
-				src={bookData.video}
+				src=`${bookData.video}`
 				autoplay
 				loop
 				muted
