@@ -13,6 +13,7 @@ const Models = [
 	{ title: 'jamoneroMacondo', url: './gltf/jamoneroMacondo3.glb' },
 	{ title: '1p0391', url: './gltf/1p0391.glb' },
 	{ title: 'DIANA', url: './gltf/ami2.glb' },
+	{ title: '1L0024', url: './gltf/1L0024.glb' },
 ]
 
 function Model({ url, miEscala }) {

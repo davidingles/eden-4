@@ -44,11 +44,18 @@ export function getStaticPaths() {
 		>
 
 		<div class='w-full h-screen'>
-			<ReactThreeModel3D
-				client:load
-				david={bookData.three}
-				escala={bookData.escala}
-			/>
+			{bookData.three && (
+				<ReactThreeModel3D
+					client:load
+					david={bookData.three}
+					escala={bookData.escala}
+				/>
+			)}
+			{!bookData.three && (
+<div class='w-full h-full flex justify-center items-center'>
+	<h1 class='text-orange-400 text-5xl'>No hay modelo 3D</h1>
+</div>
+			)}
 		</div>
 	</main>
 </LayoutCatalogo>

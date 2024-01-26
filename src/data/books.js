@@ -6,7 +6,7 @@ export const books = [
 		img: '/catalogo/1P0221.png',
 		opinion: 'Bandeja automontable acotada.',
 		author: 'David Inglés',
-		three: 'BandejaAacotada',
+		// three: 'BandejaAacotada',
 		categoria: 'Bandejas'
 
 	},
@@ -60,12 +60,13 @@ export const books = [
 		categoria: 'Bandejas'
 	},
 	{
-		id: 'troquel1L0024',
-		title: 'Referencia: troquel1L0024',
+		id: '1L0024',
+		troquel: '1L0024',
+		title: 'Referencia: BASTBM01',
 		img: '/catalogo/troquel1L0024.png',
 		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
 		author: 'Vicente Latorre',
-		three: 'Troquel1L0024',
+		three: '1L0024',
 		categoria: 'Bandejas'
 	},
 	{
