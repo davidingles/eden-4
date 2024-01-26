@@ -248,6 +248,7 @@ export const books = [
 		author: 'Vicente Latorre',
 		three: 'DIANA',
 		// video: '/videos/montajes/',
-		categoria: 'expositor'
+		categoria: 'expositor',
+		escala: .3
 	}
 ]
