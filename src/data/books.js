@@ -239,5 +239,15 @@ export const books = [
 		three: 'cajaSeparadorRemesh2',
 		video: '/videos/montajes/videoJamonero.webm',
 		categoria: 'Bandejas'
+	},
+	{
+		id: 'dianaTiro',
+		title: 'DIANA DE TIRO',
+		img: '/catalogo/AMI UNO2.png',
+		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
+		author: 'Vicente Latorre',
+		three: 'DIANA',
+		// video: '/videos/montajes/',
+		categoria: 'expositor'
 	}
 ]
