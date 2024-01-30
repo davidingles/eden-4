@@ -67,7 +67,10 @@ export const books = [
 		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
 		author: 'Vicente Latorre',
 		three: '1L0024',
-		categoria: 'Bandejas'
+		categoria: 'Bandejas',
+		posicion: .3,
+		escala: 1,
+		video: '/videos/montajes/v_1L0024.webm'
 	},
 	{
 		id: 'troquel1P0572',
@@ -138,8 +141,11 @@ export const books = [
 		img: '/catalogo/troquelCaballete.png',
 		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
 		author: 'Vicente Latorre',
-		three: 'TroquelCaballete',
-		categoria: 'expositor'
+		three: 'caballete-03',
+		categoria: 'expositor',
+		video: '/videos/montajes/videoCaballete.webm',
+		escala: .3,
+		posicion: .3
 	},
 	{
 		id: 'troquel4e0066',
@@ -159,7 +165,10 @@ export const books = [
 		author: 'Vicente Latorre',
 		three: '1p0391',
 		video: '/videos/montajes/videoCajaConBotes.webm',
+		posicion: .3,
 		categoria: 'Cajas',
+		escala: 1.3
+
 	},
 	{
 		id: 'arbol',
@@ -179,67 +188,10 @@ export const books = [
 		author: 'Vicente Latorre',
 		three: 'jamoneroMacondo2',
 		video: '/videos/montajes/videoJamonero.webm',
-		categoria: 'Bandejas'
-	},
-	{
-		id: 'jamonero2',
-		title: 'Referencia: jamoneroMacondo',
-		img: '/catalogo/JamoneroSinImpresion.png',
-		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
-		author: 'Vicente Latorre',
-		three: 'jamoneroMacondo3',
-		video: '/videos/montajes/videoJamonero.webm',
-		categoria: 'Bandejas'
-	},
-	{
-		id: 'cajaSeparador',
-		title: 'Referencia: jamoneroMacondo',
-		img: '/catalogo/JamoneroSinImpresion.png',
-		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
-		author: 'Vicente Latorre',
-		three: 'CajaSeparador',
-		video: '/videos/montajes/videoJamonero.webm',
-		categoria: 'Bandejas'
-	},
-	{
-		id: 'estuche4e0066',
-		title: 'Referencia: troquel4e0067_glb',
-		img: '/catalogo/JamoneroSinImpresion.png',
-		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
-		author: 'Vicente Latorre',
-		three: 'troquel4e0067_glb',
-		video: '/videos/montajes/videoJamonero.webm',
-		categoria: 'Bandejas'
-	},
-	{
-		id: 'cajaSeparadorRemesh',
-		title: 'Referencia: troquel4e0067_glb',
-		img: '/catalogo/JamoneroSinImpresion.png',
-		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
-		author: 'Vicente Latorre',
-		three: 'cajaSeparadorRemesh',
-		video: '/videos/montajes/videoJamonero.webm',
-		categoria: 'Bandejas'
-	},
-	{
-		id: 'cajaSeparadorRemesh1',
-		title: 'Referencia: troquel4e0067_glb',
-		img: '/catalogo/JamoneroSinImpresion.png',
-		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
-		author: 'Vicente Latorre',
-		three: 'cajaSeparadorRemesh1',
-		video: '/videos/montajes/videoJamonero.webm',
-		categoria: 'Bandejas'
-	},
-	{
-		id: 'cajaSeparadorRemesh2',
-		title: 'Referencia: troquel4e0067_glb',
-		img: '/catalogo/JamoneroSinImpresion.png',
-		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
-		author: 'Vicente Latorre',
-		three: 'cajaSeparadorRemesh2',
-		video: '/videos/montajes/videoJamonero.webm',
-		categoria: 'Bandejas'
+		categoria: 'Bandejas',
+		escala: .8,
+		posicion: .3
+
 	},
 	{
 		id: 'dianaTiro',

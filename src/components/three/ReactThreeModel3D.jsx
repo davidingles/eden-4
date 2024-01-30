@@ -14,9 +14,10 @@ const Models = [
 	{ title: '1p0391', url: './gltf/1p0391.glb' },
 	{ title: 'DIANA', url: './gltf/ami2.glb' },
 	{ title: '1L0024', url: './gltf/1L0024.glb' },
+	{ title: 'caballete-03', url: './gltf/caballete-03.glb' },
 ]
 
-function Model({ url, miEscala }) {
+function Model({ url, miEscala, miPosicion }) {
 	const { scene } = useGLTF(url)
 	scene.traverse((node) => {
 		if (node.isMesh) {
@@ -27,7 +28,7 @@ function Model({ url, miEscala }) {
 	useFrame((state) => {
 		const t = state.clock.getElapsedTime()
 
-		group.current.position.y = -.3
+		group.current.position.y = miPosicion
 		group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, (-3 + Math.sin(t)) / 40, .8)
 	})
 	return (
@@ -41,7 +42,7 @@ function Fallback() {
 	return <Html><div>Loading...</div></Html>
 }
 
-export default function EstucheConAsas({ david, escala }) {
+export default function EstucheConAsas({ david, escala, posicion }) {
 	const [title, setTitle] = useState(david)
 
 	const { modelo } = useControls('Model', {
@@ -68,7 +69,7 @@ export default function EstucheConAsas({ david, escala }) {
         <pointLight position={[100, -100, 100]} intensity={11111} decay={2} /> */}
 				<ambientLight intensity={4} />
 				<Suspense fallback={<Fallback />}>
-					{modelUrl && <Model url={modelUrl} miEscala={escala} />}
+					{modelUrl && <Model url={modelUrl} miEscala={escala} miPosicion={posicion} />}
 				</Suspense>
 				<OrbitControls autoRotate autoRotateSpeed={.6} />
 				<ContactShadows resolution={512} scale={30} position={[0, -0.5, 0.0]} blur={.1} opacity={.5} far={10} color='#8a6246' />
