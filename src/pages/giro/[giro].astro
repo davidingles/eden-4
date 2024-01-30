@@ -46,7 +46,7 @@ export function getStaticPaths() {
 
 		<div>
 			<img
-				class='w-full h-screen object-cover'
+				class={`scale-[${bookData.tamaño}] w-full h-screen object-contain`}
 				src={bookData.img}
 				alt={bookData.title}
 			/>
