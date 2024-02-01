@@ -16,6 +16,7 @@ const Models = [
 	{ title: '1L0024', url: './gltf/1L0024.glb' },
 	{ title: 'caballete-03', url: './gltf/caballete-03.glb' },
 	{ title: 'troquel1g0011', url: './gltf/troquel1g0011.glb' },
+	{ title: 'donaciones', url: './gltf/donaciones.glb' },
 ]
 
 function Model({ url, miEscala, miPosicion }) {

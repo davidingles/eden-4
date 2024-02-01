@@ -209,5 +209,18 @@ export const books = [
 		// video: '/videos/montajes/',
 		categoria: 'expositor',
 		escala: .3
+	},
+	{
+		id: 'donaciones',
+		title: 'donaciones',
+		img: '/catalogo/donaciones.png',
+		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
+		author: 'Vicente Latorre',
+		three: 'donaciones',
+		// video: '/videos/montajes/',
+		categoria: 'expositor',
+		escala: .3,
+		posicion: -.8,
+		tamaño: 1
 	}
 ]
