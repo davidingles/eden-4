@@ -37,6 +37,7 @@ export const books = [
 		opinion: 'Estuche remontable con cierre de tapa y perforado para unir a otros estuches',
 		author: 'Vicente Latorre',
 		three: 'troquel1g0011',
+		glbSource: '/gltf/troquel1g0011.glb',
 		video: '/videos/montajes/v__1g0011.webm',
 		categoria: 'Bandejas',
 		tamaño: 1,

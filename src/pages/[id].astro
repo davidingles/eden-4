@@ -44,19 +44,24 @@ export function getStaticPaths() {
 		>
 
 		<div class='w-full h-screen'>
-			{bookData.three && (
-				<ReactThreeModel3D
-					client:load
-					david={bookData.three}
-					escala={bookData.escala}
-					posicion={bookData.posicion}
-				/>
-			)}
-			{!bookData.three && (
-<div class='w-full h-full flex justify-center items-center'>
-	<h1 class='text-orange-400 text-5xl'>No hay modelo 3D</h1>
-</div>
-			)}
+			{
+				bookData.three && (
+					<ReactThreeModel3D
+						client:load
+						// url={bookData.three}
+						escala={bookData.escala}
+						posicion={bookData.posicion}
+						url={bookData.glbSource}
+					/>
+				)
+			}
+			{
+				!bookData.three && (
+					<div class='w-full h-full flex justify-center items-center'>
+						<h1 class='text-orange-400 text-5xl'>No hay modelo 3D</h1>
+					</div>
+				)
+			}
 		</div>
 	</main>
 </LayoutCatalogo>
