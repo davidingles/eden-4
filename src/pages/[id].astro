@@ -3,6 +3,7 @@ import { books } from '../data/books.js'
 import LayoutCatalogo from '../layouts/LayoutCatalogo.astro'
 import BtnEstrellas from '../components/botones-sliders/BtnEstrellas.astro'
 import ReactThreeModel3D from '../components/three/ReactThreeModel3D.jsx'
+import { fade } from 'astro:transitions'
 
 const { id } = Astro.params
 console.log(id)
@@ -43,7 +44,12 @@ export function getStaticPaths() {
 			>VIDEO DE MONTAJE</a
 		>
 
-		<div class='w-full h-screen'>
+		<div
+			transition:name='dav'
+			transition:name='hero'
+			transition:animate={fade({ duration: '1s' })}
+			class='w-full h-screen'
+		>
 			{
 				bookData.three && (
 					<ReactThreeModel3D

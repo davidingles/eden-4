@@ -2,7 +2,7 @@
 import { books } from '../../data/books.js'
 import LayoutCatalogo from '../../layouts/LayoutCatalogo.astro'
 import BtnEstrellas from '../../components/botones-sliders/BtnEstrellas.astro'
-import Troquel1p0391 from '../../components/three/ReactThreeModel3D.jsx'
+import { fade } from 'astro:transitions'
 
 const { giro } = Astro.params
 console.log(giro)
@@ -44,7 +44,10 @@ export function getStaticPaths() {
 			>PINCHA Y PODRÁS GIRARME</a
 		>
 
-		<div>
+		<div
+			transition:name='hero'
+			transition:animate={fade({ duration: '1s' })}
+		>
 			<img
 				class={`scale-[${bookData.tamaño}] w-full h-screen object-contain`}
 				src={bookData.img}
