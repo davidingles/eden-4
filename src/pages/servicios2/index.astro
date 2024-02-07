@@ -1,0 +1,36 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { ServiciosCarruselReact2 } from '@/components/ServiciosCarruselReact2.jsx'
+
+const nave = '/videos/videosServicios/vTroqueladora.webm'
+const lunes = '/videos/videosServicios/vPegadoraMarron.webm'
+const nav = '/videos/videosServicios/vPloter.webm'
+const cielo2 = '/videos/videosServicios/vImpresora.webm'
+const naveThumb = '/img/cielo2.jpg'
+const naveThumb1 = '/img/lunes.jpg'
+const naveThumb2 = '/img/nav.jpg'
+const naveThumb3 = '/img/miercoles.jpg'
+---
+
+<Layout title='Sobre nosotros'>
+	<div class='bodyIndex rounded-lg flex h-full justify-center items-center'>
+		<ServiciosCarruselReact2
+			client:load
+			cielo2={cielo2}
+			nave={nave}
+			lunes={lunes}
+			nav={nav}
+			video={true}
+			naveThumb={naveThumb}
+			naveThumb1={naveThumb1}
+			naveThumb2={naveThumb2}
+			naveThumb3={naveThumb3}
+		/>
+	</div>
+</Layout>
+
+<style>
+	:global(.light) .bodyIndex {
+		color: #333;
+	}
+</style>
