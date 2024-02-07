@@ -1,23 +1,11 @@
-import estilos from './NosotrosCarruselReact.module.css'
+import estilos from './ServiciosCarruselReact2.module.css'
 import { useState, useEffect } from 'react'
-// const cielo2 = '/videos/videosServicios/vImpresora.webm'
-// const nave = '/videos/videosServicios/vTroqueladora.webm'
-// const lunes = '/videos/videosServicios/vPegadoraMarron.webm'
-// const nav = '/videos/videosServicios/vPloter.webm'
-// const thumbnailImpresora = '/thumbnails/impresora.png'
 
-export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveThumb, naveThumb1, naveThumb2, naveThumb3 }) {
+
+export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveThumb, naveThumb1, naveThumb2, naveThumb3, textos }) {
   const imagenes = [cielo2, nave, lunes, nav];
   const imagenes2 = [naveThumb, naveThumb1, naveThumb2, naveThumb3];
-  const imagenes3 = [naveThumb = nave, naveThumb1 = lunes, naveThumb2 = nav, naveThumb3 = cielo2];
-  const [play, setPlay] = useState(video);
 
-  const textos = [
-    "Empresa fundada en 1995, avalada con una gran experiencia en el sector del cartón.",
-    "Auxiliar Manipuladora del Cartón va evolucionando para cubrir las necesidades de sus clientes",
-    "Todas las personas que trabajan directa o indirectamente tienen el espíritu de aceptar los retos para adaptarse aun mercado más competitivo y exigente.",
-    "Tras la incorporación de nuevas generaciones seguiremos avanzando juntos.",
-  ];
   const [indiceSeleccionado, setIndiceSeleccionado] = useState(0);
   const [imagenSeleccionada, setImagenSeleccionada] = useState(imagenes[0]);
   const [loaded, setLoaded] = useState(true);
@@ -50,16 +38,26 @@ export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveT
       <div className='relative p-4 max-w-full max-h-full  flex flex-col items-center justify-center '>
 
         {/* IMAGEN GRANDE================================== */}
-        <div className={`${estilos.contenedorImagen} h-[50vh] max-w-[60vh]`}>
-          {play ? (<video autoPlay loop muted onLoad={() => setLoaded(true)} className={` ${loaded ? estilos.loaded : ""} `} src={imagenSeleccionada} alt="nave de la auxiliar" />) : <img className={` ${loaded ? estilos.loaded : ""} `} src={imagenSeleccionada} alt="nave de la auxiliar" />}
-
-          <p className='p-8 m-auto text-lg font-bold w-auto text-balance'>{textos[indiceSeleccionado]}</p>
+        <div style={{ display: 'flex' }}>
+          <div className={`${estilos.contenedorImagen}`}>
+            <video
+              poster={imagenSeleccionada}
+              autoPlay
+              loop
+              muted
+              onLoad={() => setLoaded(true)}
+              src={imagenSeleccionada}
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              alt={imagenSeleccionada}
+            />
+          </div>
+          <p className='w-[10rem] p-8 m-auto text-lg font-bold text-balance'>{textos[indiceSeleccionado]}</p>
         </div>
 
 
         {/* BOTONES ================================== */}
         <div className='hidden sm:flex flex-row p-4 m-auto gap-4'>
-          <button className={`${estilos.btn}`} onClick={() => { setAutoPlay(false); previous() }}>{'<'}</button>
+          <button className={`${estilos.btn} `} onClick={() => { setAutoPlay(false); previous() }}>{'<'}</button>
           <button className={`${estilos.btn}`} onClick={() => { setAutoPlay(!autoPlay) }} > {autoPlay === true ? 'STOP' : 'PLAY'}</button>
           <button className={`${estilos.btn} btn`} onClick={() => { setAutoPlay(false); next() }}>{'>'}</button>
         </div >
@@ -76,10 +74,10 @@ export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveT
           {imagenes2.map((imagen, index) => (
             <div className='flex ' key={index}>
               <img
-                className={`m-2 md:m-0 w-[222px] rounded-lg estilos.thumbnail cursor-pointer ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
+                className={`object-cover m-2 md:m-0 w-[175px] h-[175px] rounded-lg estilos.thumbnail cursor-pointer ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
                 src={imagen}
                 alt="fabrica"
-                onClick={() => { setImagenSeleccionada(imagenes[index]); setIndiceSeleccionado(index); setAutoPlay(false); setPlay(true); }} />
+                onClick={() => { setImagenSeleccionada(imagenes[index]); setIndiceSeleccionado(index); setAutoPlay(false) }} />
 
 
             </div>
