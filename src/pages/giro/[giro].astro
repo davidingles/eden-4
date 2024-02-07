@@ -1,8 +1,8 @@
 ---
 import { books } from '../../data/books.js'
+import { fade } from 'astro:transitions'
 import LayoutCatalogo from '../../layouts/LayoutCatalogo.astro'
 import BtnEstrellas from '../../components/botones-sliders/BtnEstrellas.astro'
-import { fade } from 'astro:transitions'
 
 const { giro } = Astro.params
 console.log(giro)
@@ -26,7 +26,7 @@ export function getStaticPaths() {
 			<nav class='flex'>
 				<a
 					id='
-					anchor'
+						anchor'
 					href='/catalogo'
 				>
 					<BtnEstrellas />
@@ -49,6 +49,8 @@ export function getStaticPaths() {
 			transition:animate={fade({ duration: '1s' })}
 		>
 			<img
+				transition:animate={fade({ duration: '1s' })}
+				transition:name='david'
 				class={`scale-[${bookData.tamaño}] w-full h-screen object-contain`}
 				src={bookData.img}
 				alt={bookData.title}

@@ -1,7 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
 import { fade } from 'astro:transitions'
-
 export interface Props {
 	id: string
 	title: string
@@ -12,19 +10,15 @@ export interface Props {
 const { id, title, img, three } = Astro.props
 ---
 
-<html lang='en'>
-	<head>
-		<title>My Homepage</title>
-		<ViewTransitions />
-	</head>
-	<body>
-		<a href=`giro/${id}`>
-			<img
-				class='aspect-[500/500] object-cover rounded-lg pegatina'
-				src=`${img}`
-				alt=`${title}`
-			/>
-		</a>
+<a href=`giro/${id}`>
+	<img
+		transition:animate={fade({ duration: '1s' })}
+		transition:name='david'
+		class='aspect-[500/500] object-cover rounded-lg pegatina'
+		src=`${img}`
+		alt=`${title}`
+	/>
+</a>
 
 		<style>
 			.pegatina:hover {
