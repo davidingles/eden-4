@@ -39,7 +39,8 @@ export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveT
 
         {/* IMAGEN GRANDE================================== */}
         <div style={{ display: 'flex' }}>
-          <div className={`${estilos.contenedorImagen}`}>
+          <div
+            style={{ display: 'flex', borderRadius: '1rem', width: '555px', height: '555px', border: '1px solid white', boxShadow: '2px 2px 11px 2px rgb(0 0 0 / 20%)' }}>
             <video
               poster={imagenSeleccionada}
               autoPlay
@@ -51,7 +52,7 @@ export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveT
               alt={imagenSeleccionada}
             />
           </div>
-          <p className='w-[10rem] p-8 m-auto text-lg font-bold text-balance'>{textos && textos[indiceSeleccionado]}{textos2 && textos2[claves[indiceSeleccionado]].dep}<br />{textos2 && textos2[claves[indiceSeleccionado]].email}<br />{textos2 && textos2[claves[indiceSeleccionado]].nombre} <br /> {textos2 && textos2[claves[indiceSeleccionado]].telefono}</p>
+          <p className='w-[10rem] p-8 m-auto text-lg font-bold text-balance'>{textos && textos[indiceSeleccionado]}{textos2 && textos2[claves[indiceSeleccionado]].dep}<br /><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].email}</p><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].nombre}</p><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].telefono}</p></p>
         </div>
 
 

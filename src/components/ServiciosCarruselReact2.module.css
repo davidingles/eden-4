@@ -58,13 +58,7 @@
   border: rgb(247, 215, 87) solid 2px;
 }
 
-.contenedorImagen {
-  display: flex;
-  border-radius: 1rem;
-  width: 555px;
-  height: 555px;
-  border: 1px solid #666;
-}
+
 
 @media screen and (max-width: 1150px) {
   .contenedorImagen {
