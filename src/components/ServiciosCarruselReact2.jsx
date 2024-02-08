@@ -2,7 +2,7 @@ import estilos from './ServiciosCarruselReact2.module.css'
 import { useState, useEffect } from 'react'
 
 
-export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveThumb, naveThumb1, naveThumb2, naveThumb3, textos }) {
+export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveThumb, naveThumb1, naveThumb2, naveThumb3, textos, textos2, claves }) {
   const imagenes = [cielo2, nave, lunes, nav];
   const imagenes2 = [naveThumb, naveThumb1, naveThumb2, naveThumb3];
 
@@ -51,7 +51,7 @@ export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveT
               alt={imagenSeleccionada}
             />
           </div>
-          <p className='w-[10rem] p-8 m-auto text-lg font-bold text-balance'>{textos[indiceSeleccionado]}</p>
+          <p className='w-[10rem] p-8 m-auto text-lg font-bold text-balance'>{textos && textos[indiceSeleccionado]}{textos2 && textos2[claves[indiceSeleccionado]].dep}<br />{textos2 && textos2[claves[indiceSeleccionado]].email}<br />{textos2 && textos2[claves[indiceSeleccionado]].nombre} <br /> {textos2 && textos2[claves[indiceSeleccionado]].telefono}</p>
         </div>
 
 
