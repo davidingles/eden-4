@@ -48,7 +48,7 @@ export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveT
               muted
               onLoad={() => setLoaded(true)}
               src={imagenSeleccionada}
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: '1rem' }}
               alt={imagenSeleccionada}
             />
           </div>
