@@ -1,13 +1,18 @@
 export const books = [
 
 	{
-		id: 'BandejaAacotada',
+		id: '1P0221',
 		title: 'Bandeja con Cotas',
 		img: '/catalogo/1P0221.png',
 		opinion: 'Bandeja automontable acotada.',
 		author: 'David Inglés',
-		// three: 'BandejaAacotada',
-		categoria: 'Bandejas'
+		categoria: 'Bandejas',
+		tamaño: 1,
+		escala: 1,
+		posicion: .3,
+		glbSource: '/gltf/1P0221.glb',
+		three: '1P0221',
+		video: '/videos/montajes/v1P0221.webm',
 
 	},
 	{
@@ -54,8 +59,9 @@ export const books = [
 		video: '/videos/montajes/video1g0198.mp4',
 		categoria: 'Bandejas',
 		tamaño: 1,
-		escala: 1.3,
-		posicion: .3
+		escala: .7,
+		posicion: -.3,
+		glbSource: '/gltf/Troquel1G0198.gltf'
 	},
 	{
 		id: 'troquel1g0102',
@@ -77,7 +83,9 @@ export const books = [
 		categoria: 'Bandejas',
 		posicion: .3,
 		escala: 1,
-		video: '/videos/montajes/v_1L0024.webm'
+		video: '/videos/montajes/v_1L0024.webm',
+		tamaño: 1,
+		glbSource: '/gltf/1L0024.glb'
 	},
 	{
 		id: 'troquel1P0572',
@@ -152,7 +160,9 @@ export const books = [
 		categoria: 'expositor',
 		video: '/videos/montajes/videoCaballete.webm',
 		escala: .3,
-		posicion: .3
+		posicion: .3,
+		tamaño: 1,
+		glbSource: '/gltf/caballete-03.glb'
 	},
 	{
 		id: 'troquel4e0066',
@@ -162,8 +172,13 @@ export const books = [
 		author: 'Vicente Latorre',
 		three: 'Troquel4e0066',
 		video: '/videos/montajes/video4e0066.webm',
-		categoria: 'Bandejas'
+		categoria: 'Bandejas',
+		escala: .9,
+		posicion: -.4,
+		tamaño: 1,
+		glbSource: '/gltf/Troquel4e0066.gltf'
 	},
+
 	{
 		id: 'troquel1p0391',
 		title: 'Referencia: troquel1p0391',
@@ -174,8 +189,9 @@ export const books = [
 		video: '/videos/montajes/videoCajaConBotes.webm',
 		posicion: .3,
 		categoria: 'Cajas',
-		escala: 1.3
-
+		escala: 1.3,
+		tamaño: 1,
+		glbSource: '/gltf/1p0391.glb'
 	},
 	{
 		id: 'arbol',
@@ -185,7 +201,11 @@ export const books = [
 		author: 'Vicente Latorre',
 		three: 'DecoracionArbol',
 		video: '/videos/montajes/videoArbolito.webm',
-		categoria: 'expositor'
+		categoria: 'expositor',
+		escala: .3,
+		posicion: -.5,
+		tamaño: 1,
+		glbSource: '/gltf/arbol y ciervo.gltf'
 	},
 	{
 		id: 'jamonero',
@@ -209,7 +229,10 @@ export const books = [
 		three: 'DIANA',
 		// video: '/videos/montajes/',
 		categoria: 'expositor',
-		escala: .3
+		escala: .4,
+		glbSource: '/gltf/ami2.glb',
+		posicion: -.5,
+		tamaño: 1
 	},
 	{
 		id: 'donaciones',

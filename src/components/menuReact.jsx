@@ -17,7 +17,7 @@ const menu = [
   {
     title: 'Servicios',
     icon: 'services',
-    link: '/servicios',
+    link: '/servicios2',
   },
   {
     title: 'Contacto',
