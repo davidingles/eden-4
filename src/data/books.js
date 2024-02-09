@@ -1,7 +1,7 @@
 export const books = [
 
 	{
-		id: 'BandejaAacotada',
+		id: '1P0221',
 		title: 'Bandeja con Cotas',
 		img: '/catalogo/1P0221.png',
 		opinion: 'Bandeja automontable acotada.',
@@ -10,7 +10,9 @@ export const books = [
 		tamaño: 1,
 		escala: 1,
 		posicion: .3,
-		glbSource: '/gltf/BandejaAcotada.gltf',
+		glbSource: '/gltf/1P0221.glb',
+		three: '1P0221',
+		video: '/videos/montajes/v1P0221.webm',
 
 	},
 	{
