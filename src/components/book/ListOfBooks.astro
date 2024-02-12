@@ -107,8 +107,8 @@ import { books } from '../../data/books.js'
 		width: auto;
 		height: auto;
 		box-shadow:
-			8px 8px 15px #111,
-			-8px -8px 15px #111;
+			8px 8px 15px rgba(30, 30, 30, 0.5),
+			-8px -8px 8px rgba(30, 30, 30, 0.5);
 	}
 	.card:hover {
 		transition: all 0.3s ease-in-out;
@@ -119,7 +119,7 @@ import { books } from '../../data/books.js'
 			-3px -3px 5px #000;
 	}
 
-	:global(.light) .card {
+	/* :global(.light) .card {
 		box-shadow:
 			8px 8px 15px #bebebe,
 			-8px -8px 15px #ffffff;
@@ -131,7 +131,7 @@ import { books } from '../../data/books.js'
 		box-shadow:
 			3px 3px 5px #9d9d9d,
 			-3px -3px 5px #ffffff;
-	}
+	} */
 
 	.opts {
 		color: white;
@@ -140,12 +140,12 @@ import { books } from '../../data/books.js'
 	.opts:hover {
 		text-decoration: underline;
 	}
-	:global(.light) .opts {
+	/* :global(.light) .opts {
 		color: #555;
 	}
 	:global(.light) .opts:hover {
 		color: #000;
 		font-weight: bold;
 		text-decoration: underline;
-	}
+	} */
 </style>

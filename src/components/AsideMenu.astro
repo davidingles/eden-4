@@ -4,12 +4,12 @@ import Logo from '@/components/icons/LogoAuxCompleto.astro'
 ---
 
 <div class='asideMenu2 bg-[#222] rounded-lg flex flex-col'>
-	<div class='logo p-4 md:flex justify-center m-2 logo-animation3 hidden'>
+	<div class='p-4 md:flex justify-center m-2 logo-animation3 hidden'>
 		<Logo />
 	</div>
 	<div class='m-2'>
 		<MenuReact
-			client:load
+			client:visible
 			transition:name='menu-react'
 			transition:persist
 		/>
@@ -17,10 +17,10 @@ import Logo from '@/components/icons/LogoAuxCompleto.astro'
 </div>
 
 <style>
-	:global(.light) .asideMenu2 {
+	/* :global(.light) .asideMenu2 {
 		background: #f0f0f0;
 		color: #202020;
-	}
+	} */
 
 	@keyframes logoFadeIn {
 		from {

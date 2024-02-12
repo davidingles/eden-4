@@ -46,7 +46,7 @@ export function getStaticPaths() {
 			{
 				bookData.video && (
 					<video
-						class='object-scale-down h-[800px] w-full'
+						class={`scale-[${bookData.scaleVideo}] object-scale-down h-[800px] w-full`}
 						src={bookData.video}
 						autoplay
 						loop

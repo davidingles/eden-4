@@ -22,79 +22,79 @@ const textos = [
 ]
 const textos2 = {
 	ventas: {
-		dep: "Ventas",
-		email: "ventas@laauxiliar.es",
-		nombre: "Miguel Ángel Latorre",
-		telefono: "686 944 933",
+		dep: 'Ventas',
+		email: 'ventas@laauxiliar.es',
+		nombre: 'Miguel Ángel Latorre',
+		telefono: '686 944 933',
 	},
 	diseño: {
-		dep: "Diseño",
-		email: "dg@laauxiliar.es",
-		nombre: "Vicente Latorre",
-		telefono: "657 842 909"
+		dep: 'Diseño',
+		email: 'dg@laauxiliar.es',
+		nombre: 'Vicente Latorre',
+		telefono: '657 842 909',
 	},
 	logistica: {
-		dep: "Logística",
-		email: "logistica@laauxiliar.es",
-		nombre: "Ángel Latorre",
-		telefono: "657 803 024"
+		dep: 'Logística',
+		email: 'logistica@laauxiliar.es',
+		nombre: 'Ángel Latorre',
+		telefono: '657 803 024',
 	},
 	admin: {
-		dep: "Administración",
-		email: "administracion@laauxiliar.es",
-		nombre: "Jesús Latorre",
-		telefono: "686 944 932"
+		dep: 'Administración',
+		email: 'administracion@laauxiliar.es',
+		nombre: 'Jesús Latorre',
+		telefono: '686 944 932',
 	},
 }
-const claves = ['ventas', 'diseño', 'logistica', 'admin'];
+const claves = ['ventas', 'diseño', 'logistica', 'admin']
 ---
 
 <Layout title='Sobre nosotros'>
-
-	<div
-	class='bodyIndex bg-gray-400 leading-8 text-white font-bold text-lg flex justify-center items-center w-full'
-	>
-	<section class='flex pr-12'>
-		<h3 class='contacta pr-4'>Llámanos al teléfono:</h3>
-		<span class=''>
-			<TextoAnimadoTelefono />
-		</span>
-	</section>
-	<section class='flex items-center'>
-		<span class=''> Encuéntranos en el mapa:</span>
-		<a
-			class='spin p-4 blend text-blue-500 mix-blend-multiply'
-			target='_blank'
-			href='https://maps.app.goo.gl/QZcyPLooNu41XfmS6'
+	<main class='flex flex-col gap-4'>
+		<div
+			class='bodyIndex bg-gray-400 leading-8 text-white font-bold text-lg flex justify-center items-center w-full'
 		>
-			<Logo
-				style='width:33px'
-				fill='fill:currentColor;'
+			<section class='flex pr-12'>
+				<h3 class='contacta pr-4'>Llámanos al teléfono:</h3>
+				<span class=''>
+					<TextoAnimadoTelefono />
+				</span>
+			</section>
+			<section class='flex items-center'>
+				<span class=''> Encuéntranos en el mapa:</span>
+				<a
+					class='spin p-4 blend text-blue-500 mix-blend-multiply'
+					target='_blank'
+					href='https://maps.app.goo.gl/QZcyPLooNu41XfmS6'
+				>
+					<Logo
+						style='width:33px'
+						fill='fill:currentColor;'
+					/>
+				</a>
+			</section>
+		</div>
+		<div class='bodyIndex rounded-lg flex h-full justify-center items-center'>
+			<ServiciosCarruselReact2
+				client:load
+				cielo2={cielo2}
+				nave={nave}
+				lunes={lunes}
+				nav={nav}
+				video={true}
+				naveThumb={naveThumb}
+				naveThumb1={naveThumb1}
+				naveThumb2={naveThumb2}
+				naveThumb3={naveThumb3}
+				claves={claves}
+				textos2={textos2}
 			/>
-		</a>
-	</section>
-	</div>
-
-	<div class='bodyIndex rounded-lg flex h-full justify-center items-center'>
-		<ServiciosCarruselReact2
-			client:load
-			cielo2={cielo2}
-			nave={nave}
-			lunes={lunes}
-			nav={nav}
-			video={true}
-			naveThumb={naveThumb}
-			naveThumb1={naveThumb1}
-			naveThumb2={naveThumb2}
-			naveThumb3={naveThumb3}
-			claves={claves}
-			textos2={textos2}
-		/>
-	</div>
+		</div>
+	</main>
 </Layout>
 
 <style>
-		@keyframes spin {
+	@keyframes spin {
 		0% {
 			transform: rotateY(0deg);
 		}

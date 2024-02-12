@@ -7,12 +7,13 @@ export const books = [
 		opinion: 'Bandeja automontable acotada.',
 		author: 'David Inglés',
 		categoria: 'Bandejas',
-		tamaño: 1,
+		tamaño: 3,
 		escala: 1,
 		posicion: .3,
 		glbSource: '/gltf/1P0221.glb',
 		three: '1P0221',
 		video: '/videos/montajes/v1P0221.webm',
+		scaleVideo: 1.5
 
 	},
 	{
