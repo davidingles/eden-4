@@ -53,6 +53,8 @@
   /* transition: all .3s ease; */
   box-shadow: 1px 1px 12px 1px rgb(0 0 0 / 40%);
   opacity: .5;
+  width: 111px;
+  height: 111px;
 }
 
 .thumbnail2:hover {
@@ -71,8 +73,17 @@
 }
 
 .texto {
-  width: 333px;
+  width: 266px;
 }
+
+.marco {
+  width: 333px;
+  height: 333px;
+}
+
+/* .thumbnailContainer {} */
+
+
 
 @media screen and (max-width: 1150px) {
   .thumbnailContainer {
@@ -93,10 +104,6 @@
   }
 }
 
-.marco {
-  width: 555px;
-  height: 555px;
-}
 
 @media screen and (min-width:1799px) {
   .marco {

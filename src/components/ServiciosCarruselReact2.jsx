@@ -53,7 +53,7 @@ export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveT
               alt={imagenSeleccionada}
             />
           </div>
-          <p className={`${estilos.texto} p-8 m-auto text-xl text-balance`}>{textos && textos[indiceSeleccionado]}{textos2 && textos2[claves[indiceSeleccionado]].dep}<br /><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].email}</p><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].nombre}</p><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].telefono}</p></p>
+          <p className={`${estilos.texto} p-8 m-auto text-lg text-balance overflow-y-auto`}>{textos && textos[indiceSeleccionado]}{textos2 && textos2[claves[indiceSeleccionado]].dep}<br /><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].email}</p><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].nombre}</p><p className='whitespace-nowrap'>{textos2 && textos2[claves[indiceSeleccionado]].telefono}</p></p>
         </div>
 
 
@@ -76,7 +76,7 @@ export function ServiciosCarruselReact2({ cielo2, nave, lunes, nav, video, naveT
           {imagenes2.map((imagen, index) => (
             <div className='flex ' key={index}>
               <img
-                className={`object-cover m-2 md:m-0 w-[175px] h-[175px] rounded-lg estilos.thumbnail cursor-pointer ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
+                className={`object-cover m-2 md:m-0 w-[111px] h-[111px] rounded-lg estilos.thumbnail cursor-pointer ${index !== indiceSeleccionado ? estilos.thumbnail2 : ""}`}
                 src={imagen}
                 alt="fabrica"
                 onClick={() => { setImagenSeleccionada(imagenes[index]); setIndiceSeleccionado(index); setAutoPlay(false) }} />
