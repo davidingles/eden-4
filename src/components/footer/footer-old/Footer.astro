@@ -7,7 +7,7 @@ import Modal from './Modal.astro'
 	<Modal />
 </div>
 <div
-	class='foot w-full h-full flex flex-col sm:flex-row gap-40 justify-center items-center p-4 overflow-y-auto'
+	class='foot flex flex-col md:flex-row gap-40 justify-center items-center p-4 overflow-y-auto'
 >
 	<div class='w-full h-full'>
 		<div
@@ -49,13 +49,16 @@ import Modal from './Modal.astro'
 	</div>
 
 	<style>
-		:global(.light) .foot {
+		.foot {
+			scrollbar-width: thin;
+		}
+		/* :global(.light) .foot {
 			background-color: #909090;
 			color: #202020;
-		}
-		:global(.light) .direccion {
+		} */
+		/* :global(.light) .direccion {
 			color: #202020;
-		}
+		} */
 		.objetivo {
 			target: _blank;
 		}

@@ -33,13 +33,11 @@ const { title } = Astro.props
 		/>
 		<title>{title}</title>
 	</head>
-	<body class='body dil-barra-desplazamiento'>
+	<body class='body'>
 		<!--  -->
 		<!--  -->
 		<!-- //!!!: ASIDE ================================= -->
-		<div
-			class='asideMenu p-2 [grid-area:aside] flex flex-col overflow-y-auto w-full'
-		>
+		<div class='asideMenu p-2 [grid-area:aside] flex flex-col'>
 			<AsideMenu />
 		</div>
 		<!-- //!!!: ASIDE ================================= -->
@@ -61,14 +59,10 @@ const { title } = Astro.props
 	<!--  -->
 	<!--  -->
 	<!-- //!!!: FOOTER ================================= -->
-	<div
-		class='[grid-area:footer] h-[88px] flex flex-col justify-center items-center'
-	>
+	<div class='[grid-area:footer] h-[88px]'>
 		<FooterMenu />
 	</div>
-	<div
-		class='[grid-area:aviso] bg-black flex flex-col justify-center items-center'
-	>
+	<div class='[grid-area:aviso] bg-black flex flex-col'>
 		<Footer />
 	</div>
 	<!-- //!!!: FOOTER ================================= -->
@@ -99,12 +93,14 @@ const { title } = Astro.props
 			color: white;
 			background-size: 224px;
 			scroll-behavior: smooth;
+			scrollbar-color: var(--auxi1) black;
+			scrollbar-width: thin;
 		}
 		::selection {
 			background-color: var(--auxi1);
 			color: white;
 		}
-		.body {
+		body {
 			display: grid;
 			grid-template-areas:
 				'aside main main'
@@ -113,6 +109,23 @@ const { title } = Astro.props
 			grid-template-columns: 225px 1fr;
 			grid-template-rows: 1fr auto;
 		}
+
+		@media screen and (max-width: 768px) {
+			body {
+				grid-template-areas:
+					'aside'
+					'main'
+					'footer'
+					'aviso';
+				grid-template-columns: 1fr;
+				grid-template-rows: 222px 1fr 88px 88px;
+			}
+			.asideMenu {
+				border: solid 3px red;
+				height: auto;
+			}
+		}
+
 		.light .body {
 			background-color: white;
 			color: rgb(55, 55, 55);
@@ -195,33 +208,6 @@ const { title } = Astro.props
 			font-weight: 900;
 			font-style: normal;
 			font-display: swap;
-		}
-
-		.dil-barra-desplazamiento {
-			/* Estilos de la barra de desplazamiento */
-			scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
-			scrollbar-color: rgb(222, 171, 18) rgb(28, 28, 28); /* Color de la barra y el fondo de la barra */
-		}
-
-		/* Estilos para la barra de desplazamiento */
-		.dil-barra-desplazamiento::-webkit-scrollbar {
-			width: 12px; /* Ancho de la barra de desplazamiento */
-		}
-
-		.dil-barra-desplazamiento::-webkit-scrollbar-thumb {
-			background-color: var(--auxi1); /* Color de la barra de desplazamiento */
-		}
-
-		.dil-barra-desplazamiento::-webkit-scrollbar-track {
-			background-color: black;
-		}
-
-		.light .dil-barra-desplazamiento::-webkit-scrollbar-thumb {
-			background-color: var(--auxi2); /* Color de la barra de desplazamiento */
-		}
-
-		.light .dil-barra-desplazamiento::-webkit-scrollbar-track {
-			background-color: white;
 		}
 		.vid {
 			height: calc(100vh - 222px);
