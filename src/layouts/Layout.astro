@@ -59,7 +59,7 @@ const { title } = Astro.props
 	<!--  -->
 	<!--  -->
 	<!-- //!!!: FOOTER ================================= -->
-	<div class='[grid-area:footer] h-[88px]'>
+	<div class='[grid-area:footer] bg-slate-800'>
 		<FooterMenu />
 	</div>
 	<div class='[grid-area:aviso] bg-black flex flex-col'>
@@ -118,7 +118,7 @@ const { title } = Astro.props
 					'footer'
 					'aviso';
 				grid-template-columns: 1fr;
-				grid-template-rows: 222px 1fr 88px 88px;
+				grid-template-rows: 222px 1fr auto auto;
 			}
 			.asideMenu {
 				border: solid 3px red;
