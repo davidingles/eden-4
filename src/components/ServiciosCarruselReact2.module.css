@@ -44,6 +44,10 @@
 
 }
 
+.boxy {
+  scrollbar-width: thin;
+}
+
 .thumbnail {
   border: rgb(247, 215, 87) solid 2px;
   box-shadow: 1px 1px 2px 1px rgb(0 0 0 / 20%);
@@ -79,6 +83,7 @@
 .marco {
   width: 333px;
   height: 333px;
+  position: relative;
 }
 
 /* .thumbnailContainer {} */
@@ -86,11 +91,11 @@
 
 
 @media screen and (max-width: 1150px) {
-  .thumbnailContainer {
+  /* .thumbnailContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4px;
-  }
+  } */
 
   .caja {
     display: flex;
